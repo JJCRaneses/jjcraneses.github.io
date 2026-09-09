@@ -121,60 +121,58 @@
         /* Name Wrapper & Speech Bubble */
         .name-wrapper {
             position: relative;
-            display: inline-block; /* Shrink-wraps the container to the exact width of your name */
+            display: inline-block; 
+            margin-top: 50px; /* Provides vertical space so the bubble doesn't overlap the Status Pill */
             margin-bottom: 5px;
         }
 
         /* Floating Animation Definition */
         @keyframes floatBubble {
-            0% { transform: translateY(-50%); }
-            50% { transform: translateY(calc(-50% - 8px)); } /* Moves up 8 pixels from its center position */
-            100% { transform: translateY(-50%); }
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); } /* Moves up 8 pixels */
+            100% { transform: translateY(0); }
         }
 
         .speech-bubble {
             position: absolute;
-            right: 100%; /* Pushes the bubble outside the left edge of the name container */
-            margin-right: 20px; /* Maintains the 20px gap */
-            top: 50%;
-            transform: translateY(-50%);
+            bottom: 100%; /* Pushes the bubble directly above the name container */
+            left: 0; /* Aligns the left edge of the bubble with the left edge of your name */
+            margin-bottom: 12px; /* Creates a gap between the bubble's tail and your name */
+            
             background-color: #333333;
             color: #ffffff;
             padding: 10px 16px;
             border-radius: 8px;
             font-size: 0.9rem;
             border: 1px solid #444444;
-            /* Text Wrapping Rules */
-            white-space: nowrap; /* Choose "nowrap" or "normal" */ /* CURRENTLY DEACTIVATED DUE TO BEING BUGGY */
-            /* width: max-content; /* This should fix the wrapping */
-            /* max-width: 2750px; /* Adjust this value to control how wide the bubble gets before wrapping */
+            
+            white-space: nowrap; 
             word-wrap: break-word;
-            /* NEW: Applies the floating animation */
             animation: floatBubble 3s ease-in-out infinite;
         }
-        /* The speech bubble tail */
+
+        /* The speech bubble tail (Inner Dark Fill) */
         .speech-bubble::after {
             content: '';
             position: absolute;
-            right: -8px; 
-            top: 50%;
-            transform: translateY(-50%);
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 8px solid #333333;
+            bottom: -8px; /* Pushes the tail out of the bottom of the bubble */
+            left: 15px; /* Positions the tail horizontally over your first letter */
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #333333; /* Downward pointing triangle */
         }
-        /* Tail border outline */
+
+        /* Tail border outline (Outer Light Border) */
         .speech-bubble::before {
             content: '';
             position: absolute;
-            right: -10px; 
-            top: 50%;
-            transform: translateY(-50%);
-            border-top: 9px solid transparent;
-            border-bottom: 9px solid transparent;
-            border-left: 9px solid #444444;
+            bottom: -10px; /* Extends slightly lower than the inner fill */
+            left: 14px; /* Shifts left by 1px to perfectly outline the 8px inner tail */
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-top: 10px solid #444444; 
         }
-
+        
         .about-name {
             font-family: 'Garamond', serif; 
             font-size: 3.2rem; 
