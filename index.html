@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* Base Setup & Roboto Font */
@@ -16,7 +16,7 @@
             scroll-padding-top: 80px; /* Fixes issue of navbar blocking section titles */
         }
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             color: #e0e0e0;
@@ -24,7 +24,7 @@
             background-color: #121212;
             line-height: 1.5;
         }
-
+        
         /* SECTION TITLES */
         .section-title {
             text-align: center;
@@ -124,6 +124,14 @@
             display: inline-block; /* Shrink-wraps the container to the exact width of your name */
             margin-bottom: 5px;
         }
+
+        /* Floating Animation Definition */
+        @keyframes floatBubble {
+            0% { transform: translateY(-50%); }
+            50% { transform: translateY(calc(-50% - 8px)); } /* Moves up 8 pixels from its center position */
+            100% { transform: translateY(-50%); }
+        }
+
         .speech-bubble {
             position: absolute;
             right: 100%; /* Pushes the bubble outside the left edge of the name container */
@@ -141,6 +149,8 @@
             /* width: max-content; /* This should fix the wrapping */
             /* max-width: 2750px; /* Adjust this value to control how wide the bubble gets before wrapping */
             word-wrap: break-word;
+            /* NEW: Applies the floating animation */
+            animation: floatBubble 3s ease-in-out infinite;
         }
         /* The speech bubble tail */
         .speech-bubble::after {
@@ -534,7 +544,7 @@
             <a href="#contact">Contact</a> 
         </div> 
         <div class="nav-right">
-            <a href="https://www.linkedin.com/in/jjcraneses/" class="nav-highlight-btn" target="_blank">Connect</a> <!-- Bye Jerma video :( I have to be professional -->
+            <a href="X" class="nav-highlight-btn" target="_blank">Connect</a> <!-- Bye Jerma video :( I have to be professional -->
         </div> 
     </nav>
 
@@ -544,16 +554,16 @@
             
             <div class="name-wrapper"> <!-- This speech bubble is a NIGHTMARE, so I purposefully keep my status message short because of it! -->
                 <div class="speech-bubble">Hello!</div>
-                <h1 class="about-name">John Joshua C. Rañeses</h1>
+                <h1 class="about-name">John</h1>
             </div>
 
             <h2 class="about-title">First Class Honors Accounting Graduate</h2>
             <div class="about-location">Dubai, United Arab Emirates</div>
             
             <div class="about-buttons">
-                <a href="mailto:jjcraneses@gmail.com" class="btn">jjcraneses@gmail.com</a>
-                <a href="tel:+971 56 486 1121" class="btn">+971 56 486 1121</a>
-                <a href="https://linkedin.com/in/jjcraneses" target="_blank" class="btn">LinkedIn↗</a>
+                <a href="mailto:email@gmail.com" class="btn">email@gmail.com</a>
+                <a href="tel:+971 56 486 1121" class="btn">+971 5X XXX XXXX</a>
+                <a href="https://linkedin.com/in/XXX" target="_blank" class="btn">LinkedIn↗</a>
             </div>
 
             <div class="about-skills">
@@ -600,7 +610,7 @@
             
             <!-- Published Paper DOI Link -->
             <div class="diss-action">
-                <a href="https://doi.org/10.63544/jbii.v5i7.100" class="diss-btn" target="_blank">Read Published Research Paper</a>
+                <a href="https://doi.org/" class="diss-btn" target="_blank">Read Published Research Paper</a>
             </div>
         </div>
     </section>
@@ -618,7 +628,7 @@
             <div class="proj-box">
                 <div class="proj-title">Stock Portfolio Tracker</div>
                 <div class="proj-year">July 2025</div> <div class="proj-desc"><em>Tailored to needs.</em><br><br>A demo portfolio management tool for tracking equity investments, analyzing allocation, and monitoring performance metrics over time. The production version was developed as a bespoke solution for a private client and is confidential.</div>
-                <a href="https://docs.google.com/spreadsheets/d/1c5rbhu8u0Afy_VqL-iAEI7B-9OFfYlS8rDlE2cX79XY/edit?usp=sharing" class="proj-link">View Project</a>
+                <a href="X" class="proj-link">View Project</a>
             </div>
 
             <div class="proj-box">
@@ -648,13 +658,13 @@
             I welcome graduate/internship opportunities across Assurance, Tax and Advisory. Continuous learning drives me—whether through new challenges, emerging technologies, or exposure to different industries and business environments.
         </div>
         <div class="contact-action-buttons">
-            <a href="mailto:jjcraneses@gmail.com" class="btn-large">Email↗</a>
-            <a href="https://linkedin.com/in/jjcraneses" target="_blank" class="btn-large">Connect↗</a>
+            <a href="mailto:email@gmail.com" class="btn-large">Email↗</a>
+            <a href="https://linkedin.com/in/XXX" target="_blank" class="btn-large">Connect↗</a>
         </div>
     </section>
 
     <footer class="footer-watermark"> 
-        John Joshua Rañeses | Dubai, UAE | Last Updated: July 2026
+        JJCR | Dubai, UAE | Last Updated: July 2026
     </footer>
 
 </body>
