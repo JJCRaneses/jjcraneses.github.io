@@ -72,14 +72,14 @@
             gap: 30px; 
         }
         .nav-links a {
-            color: #ffffff; /* Changed to default white */
+            color: #ffffff; /* white */
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem; 
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: #4ade80; /* Changed hover to signature green */
+            color: #4ade80; /* hover green */
         }
         
         /* Right Side Social Buttons */
@@ -159,27 +159,25 @@
 
         /* Right Column: Floating Photo & Backdrop Circle */
         .home-image-column {
-            flex: 0 0 450px; /* Expanded to accommodate the larger circle */
+            flex: 0 0 450px; 
             display: flex;
             justify-content: center;
             align-items: flex-end; 
         }
 
-        /* The container holding both the circle and the image */
         .image-wrapper {
             position: relative;
             width: 100%;
-            height: 450px; /* Increased height to match the new circle */
+            height: 450px; 
             display: flex;
             justify-content: center;
             align-items: flex-end; 
         }
 
-        /* The static background circle */
         .circle-backdrop {
             position: absolute;
-            width: 450px; /* Increased by ~40% */
-            height: 450px; /* Increased by ~40% */
+            width: 420px; 
+            height: 420px; 
             background-color: #2f405d; 
             border-radius: 50%;
             z-index: 0;
@@ -189,7 +187,6 @@
             transform: translateX(-50%);
         }
 
-        /* The floating photo */
         .profile-photo {
             position: relative;
             z-index: 1;
@@ -206,6 +203,148 @@
             100% { transform: translateY(0); }
         }
 
+        /* 4. TRANSITION & EDUCATION SECTION */
+        .transition-wrapper {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        .transition-headline {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .section-education {
+            display: flex;
+            justify-content: center;
+            padding: 20px 20px 100px 20px;
+        }
+        .edu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .edu-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .edu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card Typography */
+        .edu-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 5px 0;
+        }
+        .edu-subtitle {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #a0a0a0;
+            margin: 0 0 15px 0;
+        }
+        .edu-grade {
+            font-size: 0.95rem;
+            color: #4ade80;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* ACCA Dots */
+        .dots-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.filled {
+            background-color: #4ade80;
+        }
+        .dot.empty {
+            border: 2px solid #555555;
+            background-color: transparent;
+        }
+        .elective-text {
+            font-size: 0.85rem;
+            color: #888888;
+            margin-left: 10px;
+            font-style: italic;
+        }
+
+        /* Seamless Infinite Scrolling Marquee */
+        .marquee-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 12px 0;
+            margin: 25px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .marquee-content {
+            display: inline-flex;
+            gap: 20px; /* Space between words */
+            padding-right: 20px; /* Gap before it loops */
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-content span {
+            font-size: 0.9rem;
+            color: #cccccc;
+            font-weight: 500;
+        }
+        .marquee-content span::after {
+            content: "•";
+            color: #555;
+            margin-left: 20px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Card Action Buttons */
+        .card-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-card {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background-color: transparent;
+            transition: all 0.2s;
+        }
+        .btn-card:hover {
+            background-color: #ffffff;
+            color: #121212;
+            border-color: #ffffff;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 850px) {
             .home-content {
                 flex-direction: column-reverse; 
@@ -227,6 +366,12 @@
                 width: 36px;
                 height: 36px;
             }
+            .transition-headline {
+                font-size: 2.2rem;
+            }
+            .edu-card {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -234,8 +379,8 @@
 
     <nav class="navbar">
         <div class="nav-brand">
-            <span class="first-name">John</span>
-            <span class="last-name">Raneses</span>
+            <span class="first-name">JOHN JOSHUA</span>
+            <span class="last-name">RAÑESES</span>
         </div>
         
         <div class="nav-links">
@@ -273,8 +418,8 @@
             <!-- Left Side -->
             <div class="home-text-column">
                 <h1 class="hero-headline">
-                    Hi! I'm John, and<br>
-                    I'm <span class="typed-text" id="typed-output"></span>
+                    Hi, I'm John! I'm looking<br>
+                    for work across <span class="typed-text" id="typed-output"></span>
                 </h1>
             </div>
 
@@ -282,9 +427,85 @@
             <div class="home-image-column">
                 <div class="image-wrapper">
                     <div class="circle-backdrop"></div>
-                    <img src="Assets/John.png" alt="John Joshua Raneses" class="profile-photo">
+                    <img src="Assets/John.png" alt="John Joshua Rañeses" class="profile-photo">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Transition Section -->
+    <div class="transition-wrapper">
+        <h2 class="transition-headline">Looking for <span style="color: #4ade80;">an intern</span>?</h2>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="section-education">
+        <div class="edu-container">
+            
+            <!-- ACCA Box -->
+            <div class="edu-card">
+                <h3 class="edu-title">Association of Chartered Certified Accountants</h3>
+                <div class="edu-subtitle">ACCA Candidate</div>
+                
+                <div class="dots-container">
+                    <!-- 9 Completed -->
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <div class="dot filled"></div>
+                    <!-- 4 Remaining -->
+                    <div class="dot empty"></div>
+                    <div class="dot empty"></div>
+                    <div class="dot empty"></div>
+                    <div class="dot empty"></div>
+                    
+                    <span class="elective-text">[planned elective(s): AAA & AFM]</span>
+                </div>
+            </div>
+
+            <!-- University Box -->
+            <div class="edu-card">
+                <h3 class="edu-title">Bath Spa University</h3>
+                <div class="edu-subtitle">Bachelor of Arts with Honors in Business & Management, Accounting</div>
+                <div class="edu-grade">First Class Honors, Class Valedictorian 2026</div>
+                
+                <!-- Seamless Scrolling Marquee -->
+                <div class="marquee-wrapper">
+                    <!-- We duplicate the content twice to create a seamless loop -->
+                    <div class="marquee-content">
+                        <span>Financial Accounting for Business Enterprise</span>
+                        <span>Cost and Management Accounting</span>
+                        <span>Business Law</span>
+                        <span>Performance Management</span>
+                        <span>UK Taxation</span>
+                        <span>Financial Management</span>
+                        <span>Financial Reporting</span>
+                        <span>Audit and Assurance</span>
+                    </div>
+                    <div class="marquee-content" aria-hidden="true">
+                        <span>Financial Accounting for Business Enterprise</span>
+                        <span>Cost and Management Accounting</span>
+                        <span>Business Law</span>
+                        <span>Performance Management</span>
+                        <span>UK Taxation</span>
+                        <span>Financial Management</span>
+                        <span>Financial Reporting</span>
+                        <span>Audit and Assurance</span>
+                    </div>
+                </div>
+
+                <!-- Highlight Buttons -->
+                <div class="card-actions">
+                    <a href="YOUR_DOI_LINK_HERE" target="_blank" class="btn-card">Undergraduate Dissertation</a>
+                    <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" class="btn-card">Valedictorian Speech ↗</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -301,10 +522,11 @@
 
         // Typewriter Effect
         const words = [
-            "an accounting grad.", 
-            "an orator.", 
-            "a PC nerd.", 
-            "a tutor." 
+            "accounting!", 
+            "assurance!", 
+            "tax!", 
+            "advisory!",
+            "finance!"
         ];
         
         let i = 0;
