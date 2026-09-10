@@ -39,7 +39,7 @@
         }
 
         .navbar.scrolled {
-            background-color: rgba(43, 58, 85, 0.85); 
+            background-color: rgba(43, 58, 85, 0.55); /* Made significantly more transparent */
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #3a4b66;
             padding: 12px 40px; 
@@ -242,7 +242,7 @@
             100% { transform: translateY(0); }
         }
 
-        /* Static Text Box to mask the photo base */
+        /* Enlarged Static Text Box to mask the photo base */
         .location-badge {
             position: absolute;
             bottom: -15px; 
@@ -250,25 +250,25 @@
             transform: translateX(-50%);
             background-color: #2f405d; 
             z-index: 2; 
-            padding: 16px 36px;
+            padding: 20px 52px; 
             text-align: center;
-            border-radius: 6px;
+            border-radius: 8px; 
             border: none;
             width: max-content;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
         }
         .location-badge .loc-title {
-            font-size: 1.05rem;
+            font-size: 1.25rem; 
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 2px;
-            line-height: 1;
+            margin-bottom: 4px;
+            line-height: 1.2;
         }
         .location-badge .loc-sub {
-            font-size: 0.85rem;
+            font-size: 0.95rem; 
             color: #a0aabf; 
             font-weight: 500;
-            line-height: 1;
+            line-height: 1.2;
         }
 
         /* Transition Section */
@@ -417,7 +417,7 @@
             display: inline-flex;
             gap: 20px; 
             padding-right: 20px; 
-            animation: marquee 45s linear infinite; /* Increased duration to slow it down */
+            animation: marquee 60s linear infinite; 
         }
         .marquee-content span {
             font-size: 0.9rem;
@@ -519,13 +519,13 @@
             <!-- Left Side -->
             <div class="home-text-column">
                 <h1 class="hero-headline">
-                    Hi, I'm John! I'm looking<br>
-                    for work across <span class="typed-text" id="typed-output"></span>
+                    Hi, I'm John! I'm looking to<br>
+                    work in <span class="typed-text" id="typed-output"></span>
                 </h1>
                 
                 <!-- Hero Action Buttons -->
                 <div class="hero-actions">
-                    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="btn-hero btn-primary">Connect?</a>
+                    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="btn-hero btn-primary">Want to Connect?</a>
                     <a href="Assets/CV.pdf" target="_blank" class="btn-hero btn-secondary">View CV</a>
                 </div>
             </div>
@@ -536,9 +536,9 @@
                     <div class="circle-backdrop"></div>
                     <img src="Assets/John.png" alt="John Joshua Rañeses" class="profile-photo">
                     
-                    <!-- Text Box hiding the image cut-off -->
+                    <!-- Enlarged Text Box hiding the image cut-off -->
                     <div class="location-badge">
-                        <div class="loc-title">UAE Resident</div>
+                        <div class="loc-title">Accounting Graduate</div>
                         <div class="loc-sub">living in Dubai, UAE</div>
                     </div>
                 </div>
@@ -553,13 +553,13 @@
 
     <!-- Education Section -->
     <section id="education" class="section-education">
-        <h2 class="section-title">Here's my education and qualification(s)!</h2>
+        <h2 class="section-title">Here is what makes me qualified!</h2>
         
         <div class="edu-container">
             <!-- ACCA Box -->
             <div class="edu-card">
                 <h3 class="edu-title">Association of Chartered Certified Accountants</h3>
-                <div class="edu-subtitle">ACCA Candidate</div>
+                <div class="edu-subtitle">ACCA Candidate, Part Qualified (9 out of 13)</div>
                 
                 <div class="dots-container">
                     <!-- 9 Completed -->
@@ -586,7 +586,7 @@
             <div class="edu-card">
                 <h3 class="edu-title">Bath Spa University - Ras Al Khaimah Campus</h3>
                 <div class="edu-subtitle">Bachelor of Arts with Honors in Business & Management, Accounting</div>
-                <div class="edu-grade">Grade: First Class Honors (overall mark 82.96%)</div>
+                <div class="edu-grade">First Class Honors (overall mark 82.96%)</div>
                 
                 <div class="edu-awards">
                     <div class="awards-label">Awards</div>
@@ -643,7 +643,7 @@
         // Typewriter Effect
         const words = [
             "accounting!",
-            "audit!".
+            "audit!",
             "assurance!", 
             "advisory!",
             "tax!",
