@@ -352,7 +352,7 @@
         /* Expanded Static Box containing text and buttons */
         .badge-wrapper {
             position: absolute;
-            bottom: -45px; /* <-- CHANGE THIS VALUE TO MOVE IT UP (+) OR DOWN (-) */
+            bottom: -40px; /* <-- CHANGE THIS VALUE TO MOVE IT UP (+) OR DOWN (-) */
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -903,7 +903,31 @@
             transform: translateY(-2px);
         }
 
-        /* 8. FOOTER */
+        /* 8. CLOSING SECTION */
+        .section-closing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px 120px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .closing-headline {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .closing-headline .highlight {
+            color: #4ade80;
+            text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+        
+        /* 9. FOOTER */
         .site-footer {
             background-color: #151d2b; 
             padding: 60px 40px 40px 40px;
@@ -1102,7 +1126,7 @@
                 <!-- Hero Action Buttons -->
                 <div class="hero-actions">
                     <a href="https://www.linkedin.com/in/jjcraneses" target="_blank" class="btn-hero btn-primary">Want to Connect?</a>
-                    <a href="Assets/John Rañeses CV.pdf" target="_blank" class="btn-hero btn-secondary">View CV</a>
+                    <a href="Assets/John Joshua Rañeses CV.pdf" target="_blank" class="btn-hero btn-secondary">View CV</a>
                 </div>
             </div>
 
@@ -1139,7 +1163,7 @@
     <section id="education" class="section-education">
         
         <h2 class="fit-headline">Here is why I'm a good fit!</h2>
-        <h2 class="section-title">Education</h2>
+        <h2 class="section-title">Education & Qualifications</h2>
         
         <div class="edu-container">
             <!-- ACCA Box -->
@@ -1267,7 +1291,7 @@
             <div class="slide-item">
                 <img src="Assets/Showcase_Speech.png" alt="Valedictory Address" class="slide-bg">
                 <div class="slide-info-layer">
-                    <h3 class="slide-title">Valedictory Speech</h3>
+                    <h3 class="slide-title">BSU RAK Class of 2026 Valedictory Speech</h3>
                 </div>
                 <div class="slide-hover-overlay">
                     <p class="slide-hover-desc">Delivering the valedictory address as Class Valedictorian of Class of 2026 at Grand Hyatt Dubai for the 8th Graduation Ceremony for Bath Spa University - Ras Al Khaimah Campus.</p>
@@ -1279,11 +1303,11 @@
             <div class="slide-item">
                 <img src="Assets/Showcase_Research.png" alt="Research Publication" class="slide-bg">
                 <div class="slide-info-layer">
-                    <h3 class="slide-title">Research Article on AI-in-Audit</h3>
+                    <h3 class="slide-title">The AI Implementation Gap: Policy–Audit Misalignment in the UAE and Egypt</h3>
                 </div>
                 <div class="slide-hover-overlay">
-                    <p class="slide-hover-desc">Assessing how the AI landscape is changing the accounting profession by analyzing regional Big Four AI governance and regulatory transparency with PwC and Deloitte auditor perceptions in the UAE and Egypt, published and accessible via DOI.</p>
-                    <a href="YOUR_DOI_LINK" target="_blank" class="slide-view-btn">View Publication</a>
+                    <p class="slide-hover-desc">A research article on how the AI landscape is changing the accounting profession by analyzing regional Big Four AI governance and regulatory transparency with PwC and Deloitte auditor perceptions in the UAE and Egypt, published and accessible via DOI.</p>
+                    <a href="https://doi.org/10.63544/jbii.v5i7.100" target="_blank" class="slide-view-btn">View Publication</a>
                 </div>
             </div>
 
@@ -1291,7 +1315,7 @@
             <div class="slide-item">
                 <img src="Assets/Showcase_Speech.png" alt="Valedictory Address" class="slide-bg">
                 <div class="slide-info-layer">
-                    <h3 class="slide-title">Valedictorian Speech</h3>
+                    <h3 class="slide-title">Class of 2026 Valedictory Speech</h3>
                 </div>
                 <div class="slide-hover-overlay">
                     <p class="slide-hover-desc">Delivering the valedictory address as Class Valedictorian of Class of 2026 at Grand Hyatt Dubai for the 8th Graduation Ceremony for Bath Spa University - Ras Al Khaimah Campus.</p>
@@ -1355,7 +1379,15 @@
             </div>
         </div>
     </section>
-
+    
+    <!-- Closing Section -->
+    <section class="section-closing">
+        <h2 class="closing-headline">
+            Most importantly?<br>
+            <span class="highlight">I am always willing to learn!</span>
+        </h2>
+    </section>
+    
     <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-brand">JOHN JOSHUA <span>RAÑESES</span></div>
