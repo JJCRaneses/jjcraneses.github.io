@@ -22,7 +22,7 @@
             color: #e0e0e0;
             background-color: #232f43; 
             line-height: 1.5;
-            overflow-x: hidden; /* Prevents horizontal scroll from carousel */
+            overflow-x: hidden; 
         }
         
         /* 2. NAVBAR */
@@ -243,49 +243,52 @@
             100% { transform: translateY(0); }
         }
 
-        /* Expanded Static Box & Mini Buttons */
+        /* Expanded Static Box containing text and buttons */
         .badge-wrapper {
             position: absolute;
-            bottom: -35px; 
+            bottom: -50px; 
             left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
             z-index: 2;
             width: max-content;
         }
 
         .location-badge {
             background-color: #2f405d; 
-            padding: 20px 52px; 
+            padding: 24px 40px; 
             text-align: center;
-            border-radius: 8px; 
+            border-radius: 12px; 
             border: none;
             width: 100%;
             box-sizing: border-box;
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
-        .location-badge .loc-title {
+
+        .loc-text-group .loc-title {
             font-size: 1.25rem; 
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
             line-height: 1.2;
         }
-        .location-badge .loc-sub {
+
+        .loc-text-group .loc-sub {
             font-size: 0.95rem; 
             color: #a0aabf; 
             font-weight: 500;
             line-height: 1.2;
         }
 
-        /* Side-by-side Mini Buttons */
+        /* Side-by-side Mini Buttons nested in location-badge */
         .badge-actions {
             display: flex;
             gap: 10px;
         }
+
         .badge-btn {
             background-color: rgba(255, 255, 255, 0.05);
             color: #ffffff;
@@ -297,6 +300,7 @@
             text-decoration: none;
             transition: all 0.2s;
         }
+
         .badge-btn:hover {
             background-color: #4ade80;
             color: #121212;
@@ -309,7 +313,7 @@
             text-align: center;
             width: 100%;
             padding: 0 20px;
-            margin-top: 160px; 
+            margin-top: 180px; 
             margin-bottom: 100px; 
         }
         .transition-headline {
@@ -367,7 +371,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Flex Header */
         .edu-header {
             display: flex;
             justify-content: space-between;
@@ -376,7 +379,6 @@
             margin-bottom: 8px;
         }
 
-        /* Card Typography */
         .edu-title {
             font-size: 1.8rem; 
             font-weight: 800; 
@@ -405,7 +407,6 @@
             margin-bottom: 15px;
         }
 
-        /* Awards & Lists */
         .edu-awards {
             margin-bottom: 25px;
         }
@@ -435,7 +436,6 @@
             font-weight: 700;
         }
 
-        /* ACCA Dots */
         .dots-container {
             display: flex;
             align-items: center;
@@ -462,7 +462,6 @@
             font-style: italic;
         }
 
-        /* Seamless Marquee */
         .marquee-wrapper {
             overflow: hidden;
             white-space: nowrap;
@@ -583,7 +582,7 @@
             color: #121212;
         }
 
-        /* 6. SHOWCASE SECTION (Infinite Loop Slider) */
+        /* 6. SHOWCASE SECTION */
         .section-showcase {
             padding: 60px 0 100px 0;
             display: flex;
@@ -604,7 +603,6 @@
             justify-content: center;
         }
 
-        /* Arrows */
         .slider-arrow {
             position: absolute;
             top: 50%;
@@ -632,7 +630,6 @@
         .slider-prev { left: 5%; }
         .slider-next { right: 5%; }
 
-        /* The Slide Cards */
         .slide-item {
             position: absolute;
             width: 600px;
@@ -643,12 +640,11 @@
             transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
             opacity: 0;
             z-index: 0;
-            pointer-events: none; /* Can't interact unless active/neighbor */
+            pointer-events: none; 
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* State Classes managed by JS */
         .slide-item.active {
             left: 50%;
             transform: translateX(-50%) scale(1);
@@ -656,7 +652,6 @@
             z-index: 3;
             pointer-events: auto;
         }
-        /* Left neighbor - half visible */
         .slide-item.prev {
             left: 10%;
             transform: translateX(-50%) scale(0.85);
@@ -665,7 +660,6 @@
             pointer-events: auto;
             cursor: pointer;
         }
-        /* Right neighbor - half visible */
         .slide-item.next {
             left: 90%;
             transform: translateX(-50%) scale(0.85);
@@ -675,7 +669,6 @@
             cursor: pointer;
         }
 
-        /* Inner content of Slide */
         .slide-bg {
             width: 100%;
             height: 100%;
@@ -698,7 +691,6 @@
             font-weight: 700;
         }
         
-        /* Hover Overlay */
         .slide-hover-overlay {
             position: absolute;
             inset: 0;
@@ -735,9 +727,80 @@
             transform: scale(1.05);
         }
 
-        /* 7. FOOTER */
+        /* 7. SKILLS SECTION */
+        .section-skills {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 0 100px 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .skills-marquee-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skills-marquee-row {
+            display: flex;
+            width: max-content;
+        }
+
+        .skills-marquee-content {
+            display: flex;
+            gap: 20px;
+            padding-right: 20px;
+        }
+
+        /* Directional animations */
+        .skills-marquee-content.left {
+            animation: marquee-left 40s linear infinite;
+        }
+        
+        .skills-marquee-content.right {
+            animation: marquee-right 40s linear infinite;
+        }
+
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes marquee-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        .skill-pill {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .skill-pill:hover {
+            background-color: rgba(74, 222, 128, 0.15);
+            border-color: #4ade80;
+            color: #4ade80;
+            transform: translateY(-2px);
+        }
+
+        /* 8. FOOTER */
         .site-footer {
-            background-color: #151d2b; /* Slightly darker than body for contrast */
+            background-color: #151d2b; 
             padding: 60px 40px 40px 40px;
             display: flex;
             flex-direction: column;
@@ -762,21 +825,26 @@
             margin: 15px 0 25px 0;
             border-radius: 2px;
         }
+        
         .footer-bottom {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            gap: 12px;
             width: 100%;
-            max-width: 1100px;
             margin-top: 30px;
             font-size: 0.9rem;
             color: #66758c;
+            text-align: center;
         }
+
         .back-to-top {
             color: #66758c;
             text-decoration: none;
             transition: color 0.2s;
             font-weight: 500;
+            margin-top: 10px;
         }
         .back-to-top:hover {
             color: #4ade80;
@@ -839,7 +907,6 @@
             .slide-item.prev { left: 0%; transform: translateX(-30%) scale(0.85); }
             .slide-item.next { left: 100%; transform: translateX(-70%) scale(0.85); }
             .slider-arrow { width: 40px; height: 40px; font-size: 1.2rem; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -886,7 +953,7 @@
             <!-- Left Side -->
             <div class="home-text-column">
                 <h1 class="hero-headline">
-                    Hi, I'm John! I'm looking for<br>
+                    Hi, I'm John! I'm looking to<br>
                     work in <span class="typed-text" id="typed-output"></span>
                 </h1>
                 
@@ -905,13 +972,15 @@
                     
                     <div class="badge-wrapper">
                         <div class="location-badge">
-                            <div class="loc-title">Accounting Graduate</div>
-                            <div class="loc-sub">living in Dubai, UAE</div>
-                        </div>
-                        <div class="badge-actions">
-                            <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="badge-btn">Connect</a>
-                            <a href="mailto:your.email@gmail.com" class="badge-btn">Email</a>
-                            <a href="tel:+971500000000" class="badge-btn">Call</a>
+                            <div class="loc-text-group">
+                                <div class="loc-title">Accounting Graduate</div>
+                                <div class="loc-sub">living in Dubai, UAE</div>
+                            </div>
+                            <div class="badge-actions">
+                                <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="badge-btn">Connect</a>
+                                <a href="mailto:your.email@gmail.com" class="badge-btn">Email</a>
+                                <a href="tel:+971500000000" class="badge-btn">Call</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1031,14 +1100,14 @@
                 </div>
                 <div class="cert-card">
                     <img src="Assets/Cert_Data.png" alt="Data Analysis" class="cert-thumbnail">
-                    <h4 class="cert-title">Data Analysis with Google Sheets</h4>
-                    <p class="cert-issuer">Google</p>
+                    <h4 class="cert-title">Placeholder</h4>
+                    <p class="cert-issuer">Placeholder</p>
                     <a href="YOUR_LINK_HERE" target="_blank" class="cert-btn">View Certification</a>
                 </div>
                 <div class="cert-card">
                     <img src="Assets/Cert_API.png" alt="API Integrations" class="cert-thumbnail">
-                    <h4 class="cert-title">API Integrations & Automation</h4>
-                    <p class="cert-issuer">Technical Institute</p>
+                    <h4 class="cert-title">Placeholder</h4>
+                    <p class="cert-issuer">Placeholder</p>
                     <a href="YOUR_LINK_HERE" target="_blank" class="cert-btn">View Certification</a>
                 </div>
             </div>
@@ -1056,7 +1125,7 @@
             <div class="slide-item">
                 <img src="Assets/Showcase_Research.png" alt="Research Publication" class="slide-bg">
                 <div class="slide-info-layer">
-                    <h3 class="slide-title">Undergraduate Dissertation</h3>
+                    <h3 class="slide-title">Research Publication on AI-in-Audit</h3>
                 </div>
                 <div class="slide-hover-overlay">
                     <p class="slide-hover-desc">A deep dive into regional AI governance and regulatory transparency in the EMEA region, published and accessible via DOI.</p>
@@ -1080,10 +1149,10 @@
             <div class="slide-item">
                 <img src="Assets/Showcase_Council.png" alt="Student Council" class="slide-bg">
                 <div class="slide-info-layer">
-                    <h3 class="slide-title">Student Council Treasurer</h3>
+                    <h3 class="slide-title">Placeholder</h3>
                 </div>
                 <div class="slide-hover-overlay">
-                    <p class="slide-hover-desc">Managed budget allocations and financial reporting for university student initiatives from 2024 to 2025.</p>
+                    <p class="slide-hover-desc">Placeholder.</p>
                     <a href="#" class="slide-view-btn">View Details</a>
                 </div>
             </div>
@@ -1092,15 +1161,68 @@
             <div class="slide-item">
                 <img src="Assets/Showcase_Web.png" alt="Web Portfolio" class="slide-bg">
                 <div class="slide-info-layer">
-                    <h3 class="slide-title">Personal Web Portfolio</h3>
+                    <h3 class="slide-title">Placeholder</h3>
                 </div>
                 <div class="slide-hover-overlay">
-                    <p class="slide-hover-desc">Designed and built this responsive HTML/CSS portfolio to showcase my professional background and technical skills.</p>
+                    <p class="slide-hover-desc">Placeholder.</p>
                     <a href="#" class="slide-view-btn">View Code</a>
                 </div>
             </div>
 
             <button class="slider-arrow slider-next" aria-label="Next">❯</button>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-skills">
+        <h2 class="section-title">What I'm skilled in</h2>
+        
+        <div class="skills-marquee-wrapper">
+            <!-- Top Row (Scrolls Left) -->
+            <div class="skills-marquee-row">
+                <div class="skills-marquee-content left">
+                    <div class="skill-pill">Microsoft Office Suite</div>
+                    <div class="skill-pill">Google Workspace</div>
+                    <div class="skill-pill">Apps Script</div>
+                    <div class="skill-pill">APIs</div>
+                    <div class="skill-pill">QuickBooks Online</div>
+                    <div class="skill-pill">Xero</div>
+                    <div class="skill-pill">Financial Reporting</div>
+                    <div class="skill-pill">Transaction Reconciliation</div>
+                    <div class="skill-pill">HTML & CSS</div>
+                </div>
+                <div class="skills-marquee-content left" aria-hidden="true">
+                    <div class="skill-pill">Microsoft Office Suite</div>
+                    <div class="skill-pill">Google Workspace</div>
+                    <div class="skill-pill">Apps Script</div>
+                    <div class="skill-pill">APIs</div>
+                    <div class="skill-pill">QuickBooks Online</div>
+                    <div class="skill-pill">Xero</div>
+                    <div class="skill-pill">Financial Reporting</div>
+                    <div class="skill-pill">Transaction Reconciliation</div>
+                    <div class="skill-pill">HTML & CSS</div>
+                </div>
+            </div>
+
+            <!-- Bottom Row (Scrolls Right) -->
+            <div class="skills-marquee-row">
+                <div class="skills-marquee-content right">
+                    <div class="skill-pill">English</div>
+                    <div class="skill-pill">Tagalog</div>
+                    <div class="skill-pill">Public Speaking</div>
+                    <div class="skill-pill">Budget Allocation</div>
+                    <div class="skill-pill">Data Analysis</div>
+                    <div class="skill-pill">Market Research</div>
+                </div>
+                <div class="skills-marquee-content right" aria-hidden="true">
+                    <div class="skill-pill">English</div>
+                    <div class="skill-pill">Tagalog</div>
+                    <div class="skill-pill">Public Speaking</div>
+                    <div class="skill-pill">Budget Allocation</div>
+                    <div class="skill-pill">Data Analysis</div>
+                    <div class="skill-pill">Market Research</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1129,11 +1251,10 @@
 
         // Typewriter Effect
         const words = [
-            "accounting!",
+            "accounts!",
             "audit!",
-            "assurance!", 
-            "advisory!",
             "tax!",
+            "advisory!",
             "finance!"
         ];
         
@@ -1181,10 +1302,8 @@
 
         function updateCarousel() {
             slides.forEach((slide, index) => {
-                // Remove all state classes
                 slide.classList.remove('active', 'prev', 'next');
                 
-                // Calculate positions considering array wrap-around
                 if (index === currentSlide) {
                     slide.classList.add('active');
                 } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
@@ -1205,7 +1324,6 @@
             updateCarousel();
         });
 
-        // Allow clicking the side items to bring them to center
         slides.forEach((slide) => {
             slide.addEventListener('click', (e) => {
                 if (slide.classList.contains('prev')) {
@@ -1218,7 +1336,6 @@
             });
         });
 
-        // Initialize carousel on load
         updateCarousel();
     </script>
 
