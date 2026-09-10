@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* 1. BASE SETUP */
+        /* 1. BASE SETUP - Updated to Navy Theme */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px; 
@@ -20,27 +20,17 @@
             margin: 0;
             padding: 0;
             color: #e0e0e0;
-            background-color: #121212;
+            background-color: #232f43; /* Dark Navy Background */
             line-height: 1.5;
         }
         
-        /* GENERAL SECTION TITLES */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #ffffff;
-            margin: 0 0 25px 0; 
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        /* 2. NAVBAR */
+        /* 2. NAVBAR - Updated for Navy */
         .navbar {
             position: sticky;
             top: 0;
-            background-color: rgba(18, 18, 18, 0.85); 
+            background-color: rgba(35, 47, 67, 0.85); /* Frosted Navy */
             backdrop-filter: blur(8px); 
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #3a4b66; /* Lighter navy border */
             padding: 15px 40px;
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -87,146 +77,91 @@
             background-color: #22c55e;
         }
 
-        /* 3. ABOUT SECTION */
+        /* 3. ABOUT SECTION (Two-Column Layout) */
         .section-about {
-            background-color: #1e1e1e;
-            padding: 100px 20px;
+            background-color: transparent; /* Inherits the navy from body */
+            padding: 120px 40px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
         .about-content {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            max-width: 800px;
+            max-width: 1100px;
             width: 100%;
-        }
-        
-        /* Status Pill */
-        .status-pill {
-            display: inline-block;
-            background-color: rgba(34, 197, 94, 0.15);
-            color: #4ade80;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
+            gap: 40px;
         }
 
-        /* Name Wrapper & Top-Left Speech Bubble */
-        .name-wrapper {
-            position: relative;
-            display: inline-block; 
-            margin-top: 50px; 
-            margin-bottom: 5px;
-        }
-        @keyframes floatBubble {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0); }
-        }
-        .speech-bubble {
-            position: absolute;
-            bottom: 100%; 
-            left: 0; 
-            margin-bottom: 12px; 
-            background-color: #333333;
-            color: #ffffff;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            border: 1px solid #444444;
-            white-space: nowrap; 
-            word-wrap: break-word;
-            animation: floatBubble 3s ease-in-out infinite;
-        }
-        .speech-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: -8px; 
-            left: 15px; 
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid #333333; 
-        }
-        .speech-bubble::before {
-            content: '';
-            position: absolute;
-            bottom: -10px; 
-            left: 14px; 
-            border-left: 9px solid transparent;
-            border-right: 9px solid transparent;
-            border-top: 10px solid #444444; 
+        /* Left Column: Greeting & Typing Text */
+        .about-text-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
         }
 
-        /* Typography for Name & Location */
-        .about-name {
-            font-family: 'Inter', sans-serif; 
-            font-size: 3.2rem; 
+        /* Big Headline */
+        .hero-headline {
+            font-size: 3rem;
             font-weight: 700;
             color: #ffffff;
+            line-height: 1.3;
             margin: 0;
             letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-        .about-title {
-            font-family: 'Inter', sans-serif; 
-            font-size: 1.25rem; 
-            font-weight: 500;
-            color: #cccccc;
-            margin: 10px 0 5px 0;
-        }
-        .about-location {
-            font-family: 'Inter', sans-serif; 
-            font-size: 1rem; 
-            color: #999999;
-            margin: 0 0 35px 0;
         }
 
-        /* Centered Pitch Integration */
-        .section-subtitle {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #888888;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-            font-weight: 700;
+        /* Typewriter text styling */
+        .typed-text {
+            color: #4ade80; /* Green accent color */
+            border-right: 3px solid #4ade80; /* Blinking cursor */
+            white-space: nowrap;
+            animation: blinkCursor 0.75s step-end infinite;
         }
-        .contact-desc {
-            font-size: 0.85rem;
-            color: #cccccc;
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto 25px auto;
-            line-height: 1.5;
+
+        @keyframes blinkCursor {
+            from, to { border-color: transparent }
+            50% { border-color: #4ade80; }
         }
-        .contact-action-buttons {
+
+        /* Right Column: Floating Photo */
+        .about-image-column {
+            flex: 0 0 350px;
             display: flex;
-            gap: 15px;
             justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
         }
-        .btn-large {
-            font-size: 0.75rem; 
-            color: #ffffff;
-            text-decoration: none;
-            padding: 6px 14px; 
-            border: 1px solid #444;
-            border-radius: 3px; 
-            transition: all 0.2s;
-            background-color: #1a1a1a;
+
+        @keyframes floatPhoto {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
         }
-        .btn-large:hover {
-            background-color: #ffffff;
-            color: #121212;
-            border-color: #ffffff;
+
+        .profile-photo {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            /* Since it's a transparent PNG with a lasso outline, we don't need border-radius on the img itself */
+            animation: floatPhoto 4s ease-in-out infinite;
+        }
+
+        /* Responsive layout for smaller screens */
+        @media (max-width: 850px) {
+            .about-content {
+                flex-direction: column-reverse; /* Puts image above text on mobile */
+                text-align: center;
+                align-items: center;
+                gap: 20px;
+            }
+            .about-text-column {
+                align-items: center;
+                text-align: center;
+            }
+            .hero-headline {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
@@ -247,29 +182,68 @@
 
     <section id="about" class="section-about">
         <div class="about-content">
-            <div class="status-pill">Currently Seeking Internships</div> 
-            
-            <div class="name-wrapper"> 
-                <div class="speech-bubble">Hi there, I'm John, I love building computers and talking about it!</div>
-                <h1 class="about-name">John Joshua C. Rañeses</h1>
+            <!-- Left Side: Text & Typewriter -->
+            <div class="about-text-column">
+                <h1 class="hero-headline">
+                    Hey! Name's John, and<br>
+                    I'm <span class="typed-text" id="typed-output"></span>
+                </h1>
             </div>
 
-            <h2 class="about-title">Recent First Class Honors Graduate</h2>
-            <div class="about-location">Based in Dubai, United Arab Emirates</div>
-            
-            <!-- Centered Pitch Section -->
-            <div class="section-subtitle">Looking for an intern?</div>
-            <h2 class="section-title">I am open to new opportunities</h2>
-            <div class="contact-desc">
-                I welcome graduate/internship opportunities across Assurance, Tax and Advisory. Continuous learning drives me—whether through new challenges, emerging technologies, or exposure to different industries and business environments.
-            </div>
-            <div class="contact-action-buttons">
-                <a href="mailto:x" class="btn-large">Email me</a>
-                <a href="tel:x" class="btn-large">Call me</a>
-                <a href="x" target="_blank" class="btn-large">Connect with me</a>
+            <!-- Right Side: Floating Magic Lasso Photo -->
+            <div class="about-image-column">
+                <!-- Using relative path for GitHub Pages compatibility -->
+                <img src="Assets/John.png" alt="John Joshua Raneses" class="profile-photo">
             </div>
         </div>
     </section>
+
+    <!-- Typewriter Cycling Script -->
+    <script>
+        // Array of words with grammatically correct articles
+        const words = [
+            "an accounting graduate", 
+            "a computer nerd", 
+            "a public speaker", 
+            "a lifelong learner"
+        ];
+        
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typed-output').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000); // Wait 2 seconds before backspacing
+                    return;
+                }
+                timer = setTimeout(loopTyping, 100); // Typing speed
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = document.getElementById('typed-output').innerHTML.split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typed-output').innerHTML = word.join("");
+                } else {
+                    i = (i + 1) % words.length;
+                    setTimeout(typingEffect, 500); // Wait half a second before typing next word
+                    return;
+                }
+                timer = setTimeout(loopDeleting, 40); // Deleting speed (faster than typing)
+            };
+            loopDeleting();
+        }
+
+        // Start the effect
+        typingEffect();
+    </script>
 
 </body>
 </html>
