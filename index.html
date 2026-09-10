@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>John's Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,14 +72,14 @@
             gap: 30px; 
         }
         .nav-links a {
-            color: #a0a0a0;
+            color: #ffffff; /* Changed to default white */
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem; 
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: #ffffff;
+            color: #4ade80; /* Changed hover to signature green */
         }
         
         /* Right Side Social Buttons */
@@ -115,7 +115,7 @@
         /* 3. HOME SECTION */
         .section-home {
             background-color: transparent; 
-            padding: 90px 40px 80px 40px; /* Perfect middle-ground padding */
+            padding: 90px 40px 80px 40px;
             display: flex;
             justify-content: center;
         }
@@ -159,7 +159,7 @@
 
         /* Right Column: Floating Photo & Backdrop Circle */
         .home-image-column {
-            flex: 0 0 380px;
+            flex: 0 0 450px; /* Expanded to accommodate the larger circle */
             display: flex;
             justify-content: center;
             align-items: flex-end; 
@@ -169,7 +169,7 @@
         .image-wrapper {
             position: relative;
             width: 100%;
-            height: 380px; 
+            height: 450px; /* Increased height to match the new circle */
             display: flex;
             justify-content: center;
             align-items: flex-end; 
@@ -178,8 +178,8 @@
         /* The static background circle */
         .circle-backdrop {
             position: absolute;
-            width: 320px;
-            height: 320px;
+            width: 450px; /* Increased by ~40% */
+            height: 450px; /* Increased by ~40% */
             background-color: #2f405d; 
             border-radius: 50%;
             z-index: 0;
@@ -273,7 +273,7 @@
             <!-- Left Side -->
             <div class="home-text-column">
                 <h1 class="hero-headline">
-                    Hey! Name's John, and<br>
+                    Hi! I'm John, and<br>
                     I'm <span class="typed-text" id="typed-output"></span>
                 </h1>
             </div>
@@ -301,10 +301,10 @@
 
         // Typewriter Effect
         const words = [
-            "an accounting graduate", 
-            "a computer enthusiast", 
-            "a public speaker", 
-            "a passionate tutor"
+            "an accounting grad.", 
+            "an orator.", 
+            "a PC nerd.", 
+            "a tutor." 
         ];
         
         let i = 0;
