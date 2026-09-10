@@ -3,39 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title> <!-- Browser tab title -->
+    <title>John Joshua Raneses | Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Base Setup & Roboto Font */
+        /* 1. BASE SETUP */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Fixes issue of navbar blocking section titles */
+            scroll-padding-top: 80px; 
         }
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
             color: #e0e0e0;
-            font-size: 14px; 
             background-color: #121212;
             line-height: 1.5;
         }
         
-        /* SECTION TITLES */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #ffffff;
-            margin: 0 0 25px 0; 
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        /* SECTION 1: DARK (Navbar) */
+        /* 2. NAVBAR */
         .navbar {
             position: sticky;
             top: 0;
@@ -49,9 +38,9 @@
             z-index: 1000;
         }
         .nav-brand {
-            font-family: 'Garamond', serif; /* I love Garamond */
-            font-weight: 500; /* Lower if too bold */
-            font-size: 1.1rem; /* Tweak if it looks off */
+            font-family: 'Garamond', serif; 
+            font-weight: 500;
+            font-size: 1.1rem;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
@@ -88,91 +77,83 @@
             background-color: #22c55e;
         }
 
-        /* SECTION 2: LIGHT (About) */
+        /* 3. HERO / ABOUT SECTION */
         .section-about {
-            background-color: #1e1e1e; 
+            background-color: #1e1e1e;
             padding: 120px 20px;
             display: flex;
-            justify-content: center; 
+            justify-content: center;
         }
         .about-content {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; 
+            align-items: flex-start;
             text-align: left;
             max-width: 800px;
         }
         
-        /* Green Status Pill */
+        /* Status Pill */
         .status-pill {
             display: inline-block;
-            background-color: rgba(34, 197, 94, 0.15); 
-            color: #4ade80; 
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
             border: 1px solid rgba(34, 197, 94, 0.3);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.5px;
-            margin-bottom: 25px; 
+            margin-bottom: 25px;
             text-transform: uppercase;
         }
 
-        /* Name Wrapper & Speech Bubble */
+        /* Name Wrapper & Top-Left Speech Bubble */
         .name-wrapper {
             position: relative;
             display: inline-block; 
-            margin-top: 50px; /* Provides vertical space so the bubble doesn't overlap the Status Pill */
+            margin-top: 50px; 
             margin-bottom: 5px;
         }
-
-        /* Floating Animation Definition */
         @keyframes floatBubble {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-8px); } /* Moves up 8 pixels */
+            50% { transform: translateY(-8px); }
             100% { transform: translateY(0); }
         }
-
         .speech-bubble {
             position: absolute;
-            bottom: 100%; /* Pushes the bubble directly above the name container */
-            left: 0; /* Aligns the left edge of the bubble with the left edge of your name */
-            margin-bottom: 12px; /* Creates a gap between the bubble's tail and your name */
-            
+            bottom: 100%; 
+            left: 0; 
+            margin-bottom: 12px; 
             background-color: #333333;
             color: #ffffff;
             padding: 10px 16px;
             border-radius: 8px;
             font-size: 0.9rem;
             border: 1px solid #444444;
-            
             white-space: nowrap; 
             word-wrap: break-word;
             animation: floatBubble 3s ease-in-out infinite;
         }
-
-        /* The speech bubble tail (Inner Dark Fill) */
         .speech-bubble::after {
             content: '';
             position: absolute;
-            bottom: -8px; /* Pushes the tail out of the bottom of the bubble */
-            left: 15px; /* Positions the tail horizontally over your first letter */
+            bottom: -8px; 
+            left: 15px; 
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
-            border-top: 8px solid #333333; /* Downward pointing triangle */
+            border-top: 8px solid #333333; 
         }
-
-        /* Tail border outline (Outer Light Border) */
         .speech-bubble::before {
             content: '';
             position: absolute;
-            bottom: -10px; /* Extends slightly lower than the inner fill */
-            left: 14px; /* Shifts left by 1px to perfectly outline the 8px inner tail */
+            bottom: -10px; 
+            left: 14px; 
             border-left: 9px solid transparent;
             border-right: 9px solid transparent;
             border-top: 10px solid #444444; 
         }
-        
+
+        /* Typography for Name & Location */
         .about-name {
             font-family: 'Garamond', serif; 
             font-size: 3.2rem; 
@@ -195,320 +176,45 @@
             color: #999999;
             margin: 0 0 15px 0;
         }
-        .about-buttons {
-            display: flex;
-            gap: 8px; 
-        }
-        .btn {
-            font-size: 0.7rem; 
-            color: #ffffff;
-            text-decoration: none;
-            padding: 4px 10px; 
-            border: 1px solid #555;
-            border-radius: 4px; 
-            transition: all 0.2s;
-            background-color: transparent;
-        }
-        .btn:hover {
-            background-color: #ffffff;
-            color: #121212;
-            border-color: #ffffff;
-        }
 
-        /* Skills Section under Contacts */
-        .about-skills {
-            margin-top: 25px;
-            width: 100%;
-            max-width: 500px; 
+        /* Hero Pitch Integration & Buttons */
+        .hero-pitch-container {
+            margin-top: 40px; 
+            max-width: 650px;
         }
-        .skills-title {
-            font-size: 0.75rem;
-            color: #888888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .skill-badge {
-            font-size: 0.7rem;
-            color: #cccccc;
-            background-color: #2a2a2a;
-            padding: 4px 10px;
-            border-radius: 4px;
-            border: 1px solid #333;
-        }
-
-        /* SECTION 3: DARK (Education) */
-        .section-education {
-            background-color: #121212; 
-            padding: 50px 40px 80px 40px; 
-        }
-        .edu-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap; 
-        }
-        .edu-box {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 16px; 
-            padding: 30px;
-            flex: 1;
-            min-width: 320px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .edu-main {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 5px;
-        }
-        .edu-sub {
-            font-size: 0.95rem;
-            color: #a0a0a0;
-        }
-        .edu-date {
-            font-size: 0.85rem;
-            color: #888888;
-            margin-top: 4px;
-            font-style: italic;
-        }
-        .badge {
-            display: inline-block;
-            align-self: flex-start;
-            margin-top: 15px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            background-color: #ffffff; 
-            color: #000000;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        /* Dissertation Box */
-        .dissertation-box {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 16px; 
-            padding: 30px;
-            margin: 20px auto 0 auto; 
-            max-width: 1000px; 
-            box-sizing: border-box;
-        }
-        .diss-header {
-            text-align: center; 
-            margin-bottom: 20px;
-        }
-        .diss-label {
-            display: inline-block;
-            background-color: #222222;
-            border: 1px solid #444444;
-            color: #ffffff;
-            padding: 6px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .diss-title {
-            font-size: 1.1rem;
-            color: #ffffff;
-            font-style: italic; 
-            margin-bottom: 12px;
-            text-align: center; 
-        }
-        .diss-desc {
-            font-size: 0.95rem;
-            color: #cccccc;
-            line-height: 1.6;
-            text-align: justify; 
-        }
-        .diss-action {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-        }
-        .diss-btn {
-            font-size: 0.8rem;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 18px;
-            border: 1px solid #555;
-            border-radius: 4px;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
-        .diss-btn:hover {
-            background-color: #ffffff;
-            color: #121212;
-            border-color: #ffffff;
-        }
-        
-        /* SECTION 4: LIGHTER (Projects) */
-        .section-projects {
-            background-color: #1e1e1e; 
-            padding: 50px 40px 80px 40px; 
-        }
-        .projects-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        /* Projects Grid Update */
-        .proj-year {
-            font-size: 0.8rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .proj-box {
-            background-color: #121212; 
-            border: 1px solid #333;
-            border-radius: 16px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centers items horizontally within the box */
-            text-align: center;  /* Centers text within the box */
-        }
-        .proj-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-        .proj-desc {
-            font-size: 0.95rem;
-            color: #cccccc;
-            margin-bottom: 20px;
-            flex-grow: 1; 
-        }
-        .proj-link {
-            font-size: 0.8rem;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 6px 14px;
-            border: 1px solid #555;
-            border-radius: 4px;
-            align-self: center; /* Specifically centers the button */
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .proj-link:hover {
-            background-color: #ffffff;
-            color: #121212;
-            border-color: #ffffff;
-        }
-        /* SECTION 5: DARK (CV) */
-        .section-experience {
-            padding: 40px 20px 40px 20px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-        }
-        .cv-container {
-            max-width: 350px; /* Controls the maximum width of the thumbnail */
-            width: 100%;
-            margin: 0 auto;
-        }
-        .cv-link {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .cv-link:hover {
-            transform: translateY(-5px);
-            border-color: #ffffff;
-        }
-        .cv-thumbnail {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 1px solid #333;
-            opacity: 0.85; /* Dims the bright white of a CV slightly for dark mode */
-            transition: opacity 0.2s;
-        }
-        .cv-link:hover .cv-thumbnail {
-            opacity: 1; /* Brightens on hover */
-        }
-        .cv-label {
-            color: #ffffff;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.85rem; /* I'd add a 67 joke somewhere but it'd prolly ruin something */
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* SECTION 6: LIGHT */
-        .placeholder-section { /* One day I will appropriately rename you, but not today. */
-            padding: 40px 20px 40px 20px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-        }
-        
-        /* Contact Section Details */
-        .section-subtitle { /* Goes above the main title */
-            text-align: center;
-            font-size: 0.9rem; /* Adjusting based on whether it looks big or small */
+        .hero-subtitle {
+            font-size: 0.9rem;
             color: #888888;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 10px; /* Space between comment and the main title */
+            margin-bottom: 5px;
             font-weight: 700;
         }
-        
-        .section-title {
-            margin-bottom: 25px; /* Tighten the gap under the main title */
+        .hero-pitch-title {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
-        
-        .contact-desc {
-            font-size: 0.85rem; /* Increased a little, because it's too small now */
+        .hero-desc {
+            font-size: 0.95rem;
             color: #cccccc;
-            text-align: center;
-            max-width: 500px; /* Narrowed the width to keep text readable */
-            margin: 0 auto 25px auto; /* 25px bottom margin ensures gap to buttons is even */
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 25px;
         }
-        .contact-action-buttons {
+        .hero-action-buttons {
             display: flex;
             gap: 15px;
-            justify-content: center;
+            flex-wrap: wrap; 
         }
         .btn-large {
-            font-size: 0.75rem; /* Reduced from 0.95rem */
+            font-size: 0.75rem; 
             color: #ffffff;
             text-decoration: none;
-            padding: 6px 14px; /* Reduced padding */
+            padding: 6px 14px; 
             border: 1px solid #444;
-            border-radius: 3px; /* Slightly tighter radius */
+            border-radius: 3px; 
             transition: all 0.2s;
             background-color: #1a1a1a;
         }
@@ -517,17 +223,6 @@
             color: #121212;
             border-color: #ffffff;
         }
-
-        /* FOOTER / WATERMARK */
-        .footer-watermark {
-            background-color: #1e1e1e; 
-            color: #666666;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.75rem;
-            border-top: 1px solid #333333;
-        }
-
     </style>
 </head>
 <body>
@@ -539,131 +234,39 @@
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a> 
         </div> 
         <div class="nav-right">
-            <a href="X" class="nav-highlight-btn" target="_blank">Connect</a> <!-- Bye Jerma video :( I have to be professional -->
+            <a href="#" class="nav-highlight-btn" target="_blank">Connect</a> 
         </div> 
     </nav>
 
     <section id="about" class="section-about">
         <div class="about-content">
-            <div class="status-pill">Seeking Internships</div> <!-- I'm waiting for this to change. -->
+            <div class="status-pill">Currently Seeking Internships</div> 
             
-            <div class="name-wrapper"> <!-- This speech bubble is a NIGHTMARE, so I purposefully keep my status message short because of it! -->
-                <div class="speech-bubble">Hello!</div>
-                <h1 class="about-name">John</h1>
+            <div class="name-wrapper"> 
+                <div class="speech-bubble">Hi there, I'm John, I love building computers and talking about it!</div>
+                <h1 class="about-name">x</h1>
             </div>
 
-            <h2 class="about-title">First Class Honors Accounting Graduate</h2>
-            <div class="about-location">Dubai, United Arab Emirates</div>
+            <h2 class="about-title">First Class Honors Graduate</h2>
+            <div class="about-location">Based in Dubai, United Arab Emirates</div>
             
-            <div class="about-buttons">
-                <a href="mailto:email@gmail.com" class="btn">email@gmail.com</a>
-                <a href="tel:+971 56 486 1121" class="btn">+971 5X XXX XXXX</a>
-                <a href="https://linkedin.com/in/XXX" target="_blank" class="btn">LinkedIn↗</a>
-            </div>
-
-            <div class="about-skills">
-                <div class="skills-title">Relevant Software (looking to learn more!)</div> <!-- Only relevant to Accounting & Finance! -->
-                <div class="skills-container">
-                    <span class="skill-badge">Microsoft Excel</span>
-                    <span class="skill-badge">Google Sheets</span>
-                    <span class="skill-badge">QuickBooks Online</span>
-                    <span class="skill-badge">Xero</span>
-                    <span class="skill-badge">SQLite</span>
-                    <span class="skill-badge">Power BI</span>
+            <!-- PITCH SECTION -->
+            <div class="hero-pitch-container">
+                <div class="hero-subtitle">Looking for an intern?</div>
+                <h2 class="hero-pitch-title">I am open to new opportunities</h2>
+                <div class="hero-desc">
+                    I welcome graduate/internship opportunities across Assurance, Tax and Advisory. Continuous learning drives me—whether through new challenges, emerging technologies, or exposure to different industries and business environments.
+                </div>
+                <div class="hero-action-buttons">
+                    <a href="mailto:x" class="btn-large">Email me</a>
+                    <a href="tel:x" class="btn-large">Call me</a>
+                    <a href="x" target="_blank" class="btn-large">Connect with me</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="education" class="section-education">
-        <h2 class="section-title">Education</h2>
-        
-        <div class="edu-container">
-            <div class="edu-box">
-                <div class="edu-main">Bath Spa University – Bath Business School</div>
-                <div class="edu-sub">BA (Hons) Business & Management (Accounting)</div>
-                <div class="edu-date">Class of 2026</div>
-                <div class="badge">First-Class Honors, Rank 1</div>
-            </div>
-
-            <div class="edu-box">
-                <div class="edu-main">Association of Chartered Certified Accountants</div>
-                <div class="edu-sub">Student</div>
-                <div class="edu-date">In Progress</div>
-                <div class="badge">9 out of 13</div>
-            </div>
-        </div>
-
-        <div class="dissertation-box">
-            <div class="diss-header">
-                <span class="diss-label">Undergraduate Dissertation (now published!)</span>
-            </div>
-            <div class="diss-title">The AI Implementation Gap: Policy–Audit Misalignment in the UAE and Egypt</div>
-            <div class="diss-desc">
-                My dissertation examines how artificial intelligence is being adopted in the audit profession by comparing what Big Four firms publicly report with the experiences of their auditors in the United Arab Emirates and Egypt. Through an analysis of corporate transparency reports and practitioner interviews, the research reveals a gap between organizational claims and day-to-day practice, highlighting the continuing importance of human judgment, professional skepticism, and effective AI governance in external audit assurance engagements. 
-            </div>
-            
-            <!-- Published Paper DOI Link -->
-            <div class="diss-action">
-                <a href="https://doi.org/" class="diss-btn" target="_blank">Read Published Research Paper</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section-projects">
-        <h2 class="section-title">Personal Projects</h2> <!-- I should add my SFF PC Project, but I'm thinking of doing so when it's finished -->
-        <div class="projects-grid">
-            
-            <div class="proj-box">
-                <div class="proj-title">DCF Model (Micron)</div> <!-- I am using a DCF guide that follows a FMCG company—the complete OPPOSITE of Micron—my head hurts attemping to make my projections plausible -->
-                <div class="proj-year">May 2026–Present</div> <div class="proj-desc"><em>For learning purposes.</em><br><br>Developing a discounted cash flow (DCF) model for Micron using historical unlevered free cash flow (UFCF), with forward projections under multiple growth scenarios.</div>
-                <a href="#" class="proj-link">Not Available</a>
-            </div>
-
-            <div class="proj-box">
-                <div class="proj-title">Stock Portfolio Tracker</div>
-                <div class="proj-year">July 2025</div> <div class="proj-desc"><em>Tailored to needs.</em><br><br>A demo portfolio management tool for tracking equity investments, analyzing allocation, and monitoring performance metrics over time. The production version was developed as a bespoke solution for a private client and is confidential.</div>
-                <a href="X" class="proj-link">View Project</a>
-            </div>
-
-            <div class="proj-box">
-                <div class="proj-title">GPA Calculator</div>
-                <div class="proj-year">May 2026</div> <div class="proj-desc"><em>Need it? Just ask.</em><br><br>A spreadsheet-based GPA calculator that dynamically computes cumulative GPA from weight and grades, designed to assess final degree classification. The model was used to test worst-case final exam outcomes, confirming First-Class Honors classification remains achievable.</div>
-                <a href="#" class="proj-link">Available</a>
-            </div>
-
-        </div>
-    </section>
-    
-     <section id="experience" class="section-experience" style="background-color: #121212; border-top: 1px solid #333;">
-        <h2 class="section-title">Resumé</h2>
-        
-        <div class="cv-container">
-            <a href="jjcraneses.pdf" target="_blank" class="cv-link">
-                <img src="jjcraneses-thumbnail.png" alt="Preview of CV" class="cv-thumbnail">
-                <div class="cv-label">View</div>
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="placeholder-section" style="background-color: #1e1e1e; border-top: 1px solid #333;">
-        <div class="section-subtitle">Looking for an intern?</div>
-        <h2 class="section-title">Open to new opportunities</h2>
-        <div class="contact-desc">
-            I welcome graduate/internship opportunities across Assurance, Tax and Advisory. Continuous learning drives me—whether through new challenges, emerging technologies, or exposure to different industries and business environments.
-        </div>
-        <div class="contact-action-buttons">
-            <a href="mailto:email@gmail.com" class="btn-large">Email↗</a>
-            <a href="https://linkedin.com/in/XXX" target="_blank" class="btn-large">Connect↗</a>
-        </div>
-    </section>
-
-    <footer class="footer-watermark"> 
-        JJCR | Dubai, UAE | Last Updated: July 2026
-    </footer>
 
 </body>
 </html>
