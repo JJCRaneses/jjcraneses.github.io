@@ -72,14 +72,14 @@
             gap: 30px; 
         }
         .nav-links a {
-            color: #ffffff; /* white */
+            color: #ffffff; 
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem; 
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: #4ade80; /* hover green */
+            color: #4ade80; 
         }
         
         /* Right Side Social Buttons */
@@ -115,9 +115,10 @@
         /* 3. HOME SECTION */
         .section-home {
             background-color: transparent; 
-            padding: 90px 40px 80px 40px;
+            padding: 90px 40px 40px 40px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
         .home-content {
             display: flex;
@@ -155,6 +156,44 @@
         @keyframes blinkCursor {
             from, to { border-color: transparent }
             50% { border-color: #4ade80; }
+        }
+
+        /* Hero Action Buttons */
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 80px; 
+            flex-wrap: wrap;
+        }
+        .btn-hero {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-primary {
+            background-color: #4ade80;
+            color: #121212;
+            border: 1px solid #4ade80;
+        }
+        .btn-primary:hover {
+            background-color: #22c55e;
+            border-color: #22c55e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(74, 222, 128, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: #121212;
+            border-color: #ffffff;
+            transform: translateY(-3px);
         }
 
         /* Right Column: Floating Photo & Backdrop Circle */
@@ -203,11 +242,41 @@
             100% { transform: translateY(0); }
         }
 
-        /* 4. TRANSITION & EDUCATION SECTION */
+        /* Static Text Box to mask the photo base */
+        .location-badge {
+            position: absolute;
+            bottom: -15px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2f405d; 
+            z-index: 2; 
+            padding: 16px 36px;
+            text-align: center;
+            border-radius: 6px;
+            border: none;
+            width: max-content;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+        }
+        .location-badge .loc-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2px;
+            line-height: 1;
+        }
+        .location-badge .loc-sub {
+            font-size: 0.85rem;
+            color: #a0aabf; 
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        /* Transition Section */
         .transition-wrapper {
             text-align: center;
+            width: 100%;
             padding: 40px 20px;
-            margin-top: 40px;
+            margin-top: 120px; 
         }
         .transition-headline {
             font-size: 2.8rem;
@@ -217,11 +286,23 @@
             letter-spacing: -1px;
         }
 
+        /* 4. EDUCATION SECTION */
         .section-education {
             display: flex;
-            justify-content: center;
-            padding: 20px 20px 100px 20px;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 20px 100px 20px; 
         }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 0 0 50px 0; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
         .edu-container {
             display: flex;
             flex-direction: column;
@@ -233,6 +314,7 @@
         .edu-card {
             background-color: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #4ade80; 
             border-radius: 20px;
             padding: 40px;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -244,13 +326,14 @@
 
         /* Card Typography */
         .edu-title {
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-size: 1.8rem; 
+            font-weight: 800; 
             color: #ffffff;
-            margin: 0 0 5px 0;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
         }
         .edu-subtitle {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: #a0a0a0;
             margin: 0 0 15px 0;
@@ -259,7 +342,37 @@
             font-size: 0.95rem;
             color: #4ade80;
             font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Awards Vertical List */
+        .edu-awards {
             margin-bottom: 25px;
+        }
+        .awards-label,
+        .coursework-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .awards-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .awards-list li {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .awards-list li::before {
+            content: "-";
+            color: #4ade80;
+            margin-right: 8px;
+            font-weight: 700;
         }
 
         /* ACCA Dots */
@@ -297,14 +410,14 @@
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             padding: 12px 0;
-            margin: 25px 0;
+            margin: 5px 0 0 0; 
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         .marquee-content {
             display: inline-flex;
-            gap: 20px; /* Space between words */
-            padding-right: 20px; /* Gap before it loops */
-            animation: marquee 25s linear infinite;
+            gap: 20px; 
+            padding-right: 20px; 
+            animation: marquee 45s linear infinite; /* Increased duration to slow it down */
         }
         .marquee-content span {
             font-size: 0.9rem;
@@ -319,29 +432,6 @@
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
-        }
-
-        /* Card Action Buttons */
-        .card-actions {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .btn-card {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background-color: transparent;
-            transition: all 0.2s;
-        }
-        .btn-card:hover {
-            background-color: #ffffff;
-            color: #121212;
-            border-color: #ffffff;
         }
 
         /* Mobile Adjustments */
@@ -359,6 +449,10 @@
             .hero-headline {
                 font-size: 2.2rem;
             }
+            .hero-actions {
+                margin-top: 50px;
+                justify-content: center;
+            }
             .nav-right {
                 gap: 8px;
             }
@@ -369,8 +463,15 @@
             .transition-headline {
                 font-size: 2.2rem;
             }
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
             .edu-card {
                 padding: 25px;
+            }
+            .edu-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -421,6 +522,12 @@
                     Hi, I'm John! I'm looking<br>
                     for work across <span class="typed-text" id="typed-output"></span>
                 </h1>
+                
+                <!-- Hero Action Buttons -->
+                <div class="hero-actions">
+                    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="btn-hero btn-primary">Connect?</a>
+                    <a href="Assets/CV.pdf" target="_blank" class="btn-hero btn-secondary">View CV</a>
+                </div>
             </div>
 
             <!-- Right Side: Layered Depth Effect -->
@@ -428,20 +535,27 @@
                 <div class="image-wrapper">
                     <div class="circle-backdrop"></div>
                     <img src="Assets/John.png" alt="John Joshua Rañeses" class="profile-photo">
+                    
+                    <!-- Text Box hiding the image cut-off -->
+                    <div class="location-badge">
+                        <div class="loc-title">UAE Resident</div>
+                        <div class="loc-sub">living in Dubai, UAE</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Transition Section -->
-    <div class="transition-wrapper">
-        <h2 class="transition-headline">Looking for <span style="color: #4ade80;">an intern</span>?</h2>
-    </div>
+        <!-- Transition Section -->
+        <div class="transition-wrapper">
+            <h2 class="transition-headline">Looking for <span style="color: #4ade80;">an intern</span>?</h2>
+        </div>
+    </section>
 
     <!-- Education Section -->
     <section id="education" class="section-education">
+        <h2 class="section-title">Here's my education and qualification(s)!</h2>
+        
         <div class="edu-container">
-            
             <!-- ACCA Box -->
             <div class="edu-card">
                 <h3 class="edu-title">Association of Chartered Certified Accountants</h3>
@@ -470,15 +584,27 @@
 
             <!-- University Box -->
             <div class="edu-card">
-                <h3 class="edu-title">Bath Spa University</h3>
+                <h3 class="edu-title">Bath Spa University - Ras Al Khaimah Campus</h3>
                 <div class="edu-subtitle">Bachelor of Arts with Honors in Business & Management, Accounting</div>
-                <div class="edu-grade">First Class Honors, Class Valedictorian 2026</div>
+                <div class="edu-grade">Grade: First Class Honors (overall mark 82.96%)</div>
+                
+                <div class="edu-awards">
+                    <div class="awards-label">Awards</div>
+                    <ul class="awards-list">
+                        <li>Class Valedictorian (out of 523 graduates)</li>
+                        <li>Academic Excellence Awardee (all semesters)</li>
+                        <li>Research Publication Award (top in module)</li>
+                    </ul>
+                </div>
+                
+                <!-- Relevant Coursework Label -->
+                <div class="coursework-label">Relevant Coursework</div>
                 
                 <!-- Seamless Scrolling Marquee -->
                 <div class="marquee-wrapper">
                     <!-- We duplicate the content twice to create a seamless loop -->
                     <div class="marquee-content">
-                        <span>Financial Accounting for Business Enterprise</span>
+                        <span>Financial Accounting</span>
                         <span>Cost and Management Accounting</span>
                         <span>Business Law</span>
                         <span>Performance Management</span>
@@ -488,7 +614,7 @@
                         <span>Audit and Assurance</span>
                     </div>
                     <div class="marquee-content" aria-hidden="true">
-                        <span>Financial Accounting for Business Enterprise</span>
+                        <span>Financial Accounting</span>
                         <span>Cost and Management Accounting</span>
                         <span>Business Law</span>
                         <span>Performance Management</span>
@@ -497,12 +623,6 @@
                         <span>Financial Reporting</span>
                         <span>Audit and Assurance</span>
                     </div>
-                </div>
-
-                <!-- Highlight Buttons -->
-                <div class="card-actions">
-                    <a href="YOUR_DOI_LINK_HERE" target="_blank" class="btn-card">Undergraduate Dissertation</a>
-                    <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" class="btn-card">Valedictorian Speech ↗</a>
                 </div>
             </div>
 
@@ -522,10 +642,11 @@
 
         // Typewriter Effect
         const words = [
-            "accounting!", 
+            "accounting!",
+            "audit!".
             "assurance!", 
-            "tax!", 
             "advisory!",
+            "tax!",
             "finance!"
         ];
         
