@@ -242,30 +242,26 @@
             100% { transform: translateY(0); }
         }
 
-        /* Static Box & Mini Buttons Wrapper */
-        .badge-wrapper {
+        /* Expanded Static Box & Mini Buttons */
+        .location-badge {
             position: absolute;
-            bottom: -35px; 
+            bottom: -50px; 
             left: 50%;
             transform: translateX(-50%);
+            background-color: #2f405d; 
+            z-index: 2; 
+            padding: 24px 40px; 
+            text-align: center;
+            border-radius: 12px; 
+            border: none;
+            width: max-content;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
-            z-index: 2;
-            width: max-content;
+            gap: 16px;
         }
 
-        .location-badge {
-            background-color: #2f405d; 
-            padding: 20px 52px; 
-            text-align: center;
-            border-radius: 8px; 
-            border: none;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
-        }
         .location-badge .loc-title {
             font-size: 1.25rem; 
             font-weight: 700;
@@ -273,6 +269,7 @@
             margin-bottom: 4px;
             line-height: 1.2;
         }
+
         .location-badge .loc-sub {
             font-size: 0.95rem; 
             color: #a0aabf; 
@@ -280,11 +277,11 @@
             line-height: 1.2;
         }
 
-        /* Side-by-side Mini Buttons */
         .badge-actions {
             display: flex;
             gap: 10px;
         }
+
         .badge-btn {
             background-color: rgba(255, 255, 255, 0.05);
             color: #ffffff;
@@ -296,6 +293,7 @@
             text-decoration: none;
             transition: all 0.2s;
         }
+
         .badge-btn:hover {
             background-color: #4ade80;
             color: #121212;
@@ -308,7 +306,7 @@
             text-align: center;
             width: 100%;
             padding: 40px 20px;
-            margin-top: 140px; 
+            margin-top: 160px; /* Increased to account for the larger photo badge */
         }
         .transition-headline {
             font-size: 2.8rem;
@@ -488,7 +486,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 0 100px 0; /* Removing side padding allows seamless edge-to-edge scroll */
+            padding: 60px 0 100px 0; 
             overflow: hidden;
             width: 100%;
         }
@@ -519,7 +517,7 @@
         }
 
         .cert-card {
-            flex: 0 0 320px; /* Fixed width for cards */
+            flex: 0 0 320px; 
             background-color: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
@@ -622,6 +620,9 @@
             .edu-title {
                 font-size: 1.5rem;
             }
+            .location-badge {
+                padding: 20px 30px;
+            }
         }
     </style>
 </head>
@@ -685,15 +686,13 @@
                     <div class="circle-backdrop"></div>
                     <img src="Assets/John.png" alt="John Joshua Rañeses" class="profile-photo">
                     
-                    <!-- Wrapper for Badge and Actions -->
-                    <div class="badge-wrapper">
-                        <!-- Enlarged Text Box hiding the image cut-off -->
-                        <div class="location-badge">
+                    <!-- Expanded Location Badge with Actions -->
+                    <div class="location-badge">
+                        <div>
                             <div class="loc-title">Accounting Graduate</div>
                             <div class="loc-sub">living in Dubai, UAE</div>
                         </div>
                         
-                        <!-- Mini Action Buttons -->
                         <div class="badge-actions">
                             <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="badge-btn">Connect</a>
                             <a href="mailto:your.email@gmail.com" class="badge-btn">Email</a>
@@ -815,14 +814,14 @@
                 </div>
                 <div class="cert-card">
                     <img src="Assets/Cert_Data.png" alt="Data Analysis" class="cert-thumbnail">
-                    <h4 class="cert-title">PwC US - Audit Job Simulation</h4>
-                    <p class="cert-issuer">Forage</p>
+                    <h4 class="cert-title">Data Analysis with Google Sheets</h4>
+                    <p class="cert-issuer">Google</p>
                     <a href="YOUR_LINK_HERE" target="_blank" class="cert-btn">View Certification</a>
                 </div>
                 <div class="cert-card">
                     <img src="Assets/Cert_API.png" alt="API Integrations" class="cert-thumbnail">
-                    <h4 class="cert-title">Soon...</h4>
-                    <p class="cert-issuer"></p>
+                    <h4 class="cert-title">API Integrations & Automation</h4>
+                    <p class="cert-issuer">Technical Institute</p>
                     <a href="YOUR_LINK_HERE" target="_blank" class="cert-btn">View Certification</a>
                 </div>
             </div>
@@ -843,14 +842,14 @@
                 </div>
                 <div class="cert-card">
                     <img src="Assets/Cert_Data.png" alt="Data Analysis" class="cert-thumbnail">
-                    <h4 class="cert-title">PwC US - Audit Job Simulation</h4>
-                    <p class="cert-issuer">Forage</p>
+                    <h4 class="cert-title">Data Analysis with Google Sheets</h4>
+                    <p class="cert-issuer">Google</p>
                     <a href="YOUR_LINK_HERE" target="_blank" class="cert-btn">View Certification</a>
                 </div>
                 <div class="cert-card">
                     <img src="Assets/Cert_API.png" alt="API Integrations" class="cert-thumbnail">
-                    <h4 class="cert-title">Soon...</h4>
-                    <p class="cert-issuer"></p>
+                    <h4 class="cert-title">API Integrations & Automation</h4>
+                    <p class="cert-issuer">Technical Institute</p>
                     <a href="YOUR_LINK_HERE" target="_blank" class="cert-btn">View Certification</a>
                 </div>
             </div>
