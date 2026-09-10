@@ -20,8 +20,9 @@
             margin: 0;
             padding: 0;
             color: #e0e0e0;
-            background-color: #232f43; /* Dark Navy Background */
+            background-color: #232f43; 
             line-height: 1.5;
+            overflow-x: hidden; /* Prevents horizontal scroll from carousel */
         }
         
         /* 2. NAVBAR */
@@ -243,25 +244,29 @@
         }
 
         /* Expanded Static Box & Mini Buttons */
-        .location-badge {
+        .badge-wrapper {
             position: absolute;
-            bottom: -50px; 
+            bottom: -35px; 
             left: 50%;
             transform: translateX(-50%);
-            background-color: #2f405d; 
-            z-index: 2; 
-            padding: 24px 40px; 
-            text-align: center;
-            border-radius: 12px; 
-            border: none;
-            width: max-content;
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
+            z-index: 2;
+            width: max-content;
         }
 
+        .location-badge {
+            background-color: #2f405d; 
+            padding: 20px 52px; 
+            text-align: center;
+            border-radius: 8px; 
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+        }
         .location-badge .loc-title {
             font-size: 1.25rem; 
             font-weight: 700;
@@ -269,7 +274,6 @@
             margin-bottom: 4px;
             line-height: 1.2;
         }
-
         .location-badge .loc-sub {
             font-size: 0.95rem; 
             color: #a0aabf; 
@@ -277,11 +281,11 @@
             line-height: 1.2;
         }
 
+        /* Side-by-side Mini Buttons */
         .badge-actions {
             display: flex;
             gap: 10px;
         }
-
         .badge-btn {
             background-color: rgba(255, 255, 255, 0.05);
             color: #ffffff;
@@ -293,7 +297,6 @@
             text-decoration: none;
             transition: all 0.2s;
         }
-
         .badge-btn:hover {
             background-color: #4ade80;
             color: #121212;
@@ -305,8 +308,9 @@
         .transition-wrapper {
             text-align: center;
             width: 100%;
-            padding: 40px 20px;
-            margin-top: 160px; /* Increased to account for the larger photo badge */
+            padding: 0 20px;
+            margin-top: 160px; 
+            margin-bottom: 100px; 
         }
         .transition-headline {
             font-size: 2.8rem;
@@ -321,14 +325,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 100px 20px 80px 20px; 
+            padding: 0 20px 0 20px; 
         }
         
+        .fit-headline {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin: 0 0 100px 0; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.2rem;
             color: #ffffff;
-            margin: 0 0 50px 0; 
+            margin: 0 0 40px 0; 
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -354,7 +367,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Flex Header for Title & Date alignment */
+        /* Flex Header */
         .edu-header {
             display: flex;
             justify-content: space-between;
@@ -392,7 +405,7 @@
             margin-bottom: 15px;
         }
 
-        /* Awards Vertical List */
+        /* Awards & Lists */
         .edu-awards {
             margin-bottom: 25px;
         }
@@ -449,7 +462,7 @@
             font-style: italic;
         }
 
-        /* Seamless Infinite Scrolling Marquee */
+        /* Seamless Marquee */
         .marquee-wrapper {
             overflow: hidden;
             white-space: nowrap;
@@ -486,9 +499,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 0 100px 0; 
+            padding: 0 0 100px 0; 
             overflow: hidden;
             width: 100%;
+        }
+        .section-certs .section-title {
+            margin: 60px 0 60px 0; 
         }
 
         .cert-marquee-wrapper {
@@ -499,23 +515,19 @@
             -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
             mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
         }
-
         .cert-marquee-wrapper:hover .cert-marquee-content {
             animation-play-state: paused;
         }
-
         .cert-marquee-content {
             display: flex;
             gap: 30px;
             padding-right: 30px;
             animation: scroll-certs 35s linear infinite;
         }
-
         @keyframes scroll-certs {
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
-
         .cert-card {
             flex: 0 0 320px; 
             background-color: rgba(255, 255, 255, 0.03);
@@ -526,13 +538,11 @@
             flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .cert-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border-color: rgba(74, 222, 128, 0.3);
         }
-
         .cert-thumbnail {
             width: 100%;
             height: 180px;
@@ -542,7 +552,6 @@
             margin-bottom: 15px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .cert-title {
             font-size: 1.15rem;
             font-weight: 700;
@@ -550,14 +559,12 @@
             margin: 0 0 5px 0;
             line-height: 1.3;
         }
-        
         .cert-issuer {
             font-size: 0.9rem;
             color: #a0aabf;
             margin: 0 0 20px 0;
             font-weight: 500;
         }
-
         .cert-btn {
             margin-top: auto;
             align-self: flex-start;
@@ -571,10 +578,208 @@
             text-decoration: none;
             transition: all 0.2s;
         }
-
         .cert-btn:hover {
             background-color: #4ade80;
             color: #121212;
+        }
+
+        /* 6. SHOWCASE SECTION (Infinite Loop Slider) */
+        .section-showcase {
+            padding: 60px 0 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .showcase-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            height: 400px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(35, 47, 67, 0.8);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        .slider-arrow:hover {
+            background: #4ade80;
+            color: #121212;
+            border-color: #4ade80;
+        }
+        .slider-prev { left: 5%; }
+        .slider-next { right: 5%; }
+
+        /* The Slide Cards */
+        .slide-item {
+            position: absolute;
+            width: 600px;
+            height: 350px;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #1a2436;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            opacity: 0;
+            z-index: 0;
+            pointer-events: none; /* Can't interact unless active/neighbor */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* State Classes managed by JS */
+        .slide-item.active {
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+            z-index: 3;
+            pointer-events: auto;
+        }
+        /* Left neighbor - half visible */
+        .slide-item.prev {
+            left: 10%;
+            transform: translateX(-50%) scale(0.85);
+            opacity: 0.5;
+            z-index: 2;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        /* Right neighbor - half visible */
+        .slide-item.next {
+            left: 90%;
+            transform: translateX(-50%) scale(0.85);
+            opacity: 0.5;
+            z-index: 2;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        /* Inner content of Slide */
+        .slide-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+        .slide-info-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 30px 20px 30px;
+            background: linear-gradient(to top, rgba(18, 18, 18, 0.95), transparent);
+            box-sizing: border-box;
+        }
+        .slide-title {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        /* Hover Overlay */
+        .slide-hover-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 36, 54, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+        .slide-item.active:hover .slide-hover-overlay {
+            opacity: 1;
+        }
+        .slide-hover-desc {
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .slide-view-btn {
+            background-color: #4ade80;
+            color: #121212;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        .slide-view-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 7. FOOTER */
+        .site-footer {
+            background-color: #151d2b; /* Slightly darker than body for contrast */
+            padding: 60px 40px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 40px;
+        }
+        .footer-brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .footer-brand span {
+            color: #4ade80;
+        }
+        .footer-divider {
+            width: 40px;
+            height: 3px;
+            background-color: #4ade80;
+            margin: 15px 0 25px 0;
+            border-radius: 2px;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #66758c;
+        }
+        .back-to-top {
+            color: #66758c;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+        .back-to-top:hover {
+            color: #4ade80;
         }
 
         /* Mobile Adjustments */
@@ -606,6 +811,10 @@
             .transition-headline {
                 font-size: 2.2rem;
             }
+            .fit-headline {
+                font-size: 1.8rem;
+                margin-bottom: 80px;
+            }
             .section-title {
                 font-size: 1.8rem;
                 margin-bottom: 30px;
@@ -623,6 +832,14 @@
             .location-badge {
                 padding: 20px 30px;
             }
+            .slide-item {
+                width: 85%;
+                height: 300px;
+            }
+            .slide-item.prev { left: 0%; transform: translateX(-30%) scale(0.85); }
+            .slide-item.next { left: 100%; transform: translateX(-70%) scale(0.85); }
+            .slider-arrow { width: 40px; height: 40px; font-size: 1.2rem; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -680,19 +897,17 @@
                 </div>
             </div>
 
-            <!-- Right Side: Layered Depth Effect -->
+            <!-- Right Side -->
             <div class="home-image-column">
                 <div class="image-wrapper">
                     <div class="circle-backdrop"></div>
                     <img src="Assets/John.png" alt="John Joshua Rañeses" class="profile-photo">
                     
-                    <!-- Expanded Location Badge with Actions -->
-                    <div class="location-badge">
-                        <div>
+                    <div class="badge-wrapper">
+                        <div class="location-badge">
                             <div class="loc-title">Accounting Graduate</div>
                             <div class="loc-sub">living in Dubai, UAE</div>
                         </div>
-                        
                         <div class="badge-actions">
                             <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="badge-btn">Connect</a>
                             <a href="mailto:your.email@gmail.com" class="badge-btn">Email</a>
@@ -711,7 +926,9 @@
 
     <!-- Education Section -->
     <section id="education" class="section-education">
-        <h2 class="section-title">Here is why I'm a good fit!</h2>
+        
+        <h2 class="fit-headline">Here is why I'm a good fit!</h2>
+        <h2 class="section-title">Education</h2>
         
         <div class="edu-container">
             <!-- ACCA Box -->
@@ -723,22 +940,10 @@
                 <div class="edu-subtitle">ACCA Candidate (9 out of 13 papers completed)</div>
                 
                 <div class="dots-container">
-                    <!-- 9 Completed -->
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <div class="dot filled"></div>
-                    <!-- 4 Remaining -->
-                    <div class="dot empty"></div>
-                    <div class="dot empty"></div>
-                    <div class="dot empty"></div>
-                    <div class="dot empty"></div>
-                    
+                    <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+                    <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+                    <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+                    <div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div>
                     <span class="elective-text">[planned elective(s): AAA & AFM]</span>
                 </div>
             </div>
@@ -761,44 +966,29 @@
                     </ul>
                 </div>
                 
-                <!-- Relevant Coursework Label -->
                 <div class="coursework-label">Relevant Coursework</div>
-                
-                <!-- Seamless Scrolling Marquee -->
                 <div class="marquee-wrapper">
-                    <!-- We duplicate the content twice to create a seamless loop -->
                     <div class="marquee-content">
-                        <span>Financial Accounting</span>
-                        <span>Cost and Management Accounting</span>
-                        <span>Business Law</span>
-                        <span>Performance Management</span>
-                        <span>UK Taxation</span>
-                        <span>Financial Management</span>
-                        <span>Financial Reporting</span>
-                        <span>Audit and Assurance</span>
+                        <span>Financial Accounting</span><span>Cost and Management Accounting</span>
+                        <span>Business Law</span><span>Performance Management</span>
+                        <span>UK Taxation</span><span>Financial Management</span>
+                        <span>Financial Reporting</span><span>Audit and Assurance</span>
                     </div>
                     <div class="marquee-content" aria-hidden="true">
-                        <span>Financial Accounting</span>
-                        <span>Cost and Management Accounting</span>
-                        <span>Business Law</span>
-                        <span>Performance Management</span>
-                        <span>UK Taxation</span>
-                        <span>Financial Management</span>
-                        <span>Financial Reporting</span>
-                        <span>Audit and Assurance</span>
+                        <span>Financial Accounting</span><span>Cost and Management Accounting</span>
+                        <span>Business Law</span><span>Performance Management</span>
+                        <span>UK Taxation</span><span>Financial Management</span>
+                        <span>Financial Reporting</span><span>Audit and Assurance</span>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="section-certs">
         <h2 class="section-title">Certifications</h2>
-        
         <div class="cert-marquee-wrapper">
-            <!-- First Set -->
             <div class="cert-marquee-content">
                 <div class="cert-card">
                     <img src="Assets/Cert_QuickBooks.png" alt="QuickBooks Certification" class="cert-thumbnail">
@@ -826,7 +1016,6 @@
                 </div>
             </div>
 
-            <!-- Second Set (Duplicate for seamless scroll) -->
             <div class="cert-marquee-content" aria-hidden="true">
                 <div class="cert-card">
                     <img src="Assets/Cert_QuickBooks.png" alt="QuickBooks Certification" class="cert-thumbnail">
@@ -855,6 +1044,77 @@
             </div>
         </div>
     </section>
+
+    <!-- Showcase Section (Infinite Slider) -->
+    <section id="showcase" class="section-showcase">
+        <h2 class="section-title">Here's some things I've done!</h2>
+        
+        <div class="showcase-slider">
+            <button class="slider-arrow slider-prev" aria-label="Previous">❮</button>
+            
+            <!-- Slide 1 -->
+            <div class="slide-item">
+                <img src="Assets/Showcase_Research.png" alt="Research Publication" class="slide-bg">
+                <div class="slide-info-layer">
+                    <h3 class="slide-title">Undergraduate Dissertation</h3>
+                </div>
+                <div class="slide-hover-overlay">
+                    <p class="slide-hover-desc">A deep dive into regional AI governance and regulatory transparency in the EMEA region, published and accessible via DOI.</p>
+                    <a href="YOUR_DOI_LINK" target="_blank" class="slide-view-btn">View Publication</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-item">
+                <img src="Assets/Showcase_Speech.png" alt="Valedictory Address" class="slide-bg">
+                <div class="slide-info-layer">
+                    <h3 class="slide-title">Valedictory Address 2026</h3>
+                </div>
+                <div class="slide-hover-overlay">
+                    <p class="slide-hover-desc">Delivering the graduating speech as Class Valedictorian for the Bath Spa University Class of 2026.</p>
+                    <a href="YOUR_YOUTUBE_LINK" target="_blank" class="slide-view-btn">Watch Video</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 (Placeholder to maintain loop mechanics) -->
+            <div class="slide-item">
+                <img src="Assets/Showcase_Council.png" alt="Student Council" class="slide-bg">
+                <div class="slide-info-layer">
+                    <h3 class="slide-title">Student Council Treasurer</h3>
+                </div>
+                <div class="slide-hover-overlay">
+                    <p class="slide-hover-desc">Managed budget allocations and financial reporting for university student initiatives from 2024 to 2025.</p>
+                    <a href="#" class="slide-view-btn">View Details</a>
+                </div>
+            </div>
+
+            <!-- Slide 4 (Placeholder to maintain loop mechanics) -->
+            <div class="slide-item">
+                <img src="Assets/Showcase_Web.png" alt="Web Portfolio" class="slide-bg">
+                <div class="slide-info-layer">
+                    <h3 class="slide-title">Personal Web Portfolio</h3>
+                </div>
+                <div class="slide-hover-overlay">
+                    <p class="slide-hover-desc">Designed and built this responsive HTML/CSS portfolio to showcase my professional background and technical skills.</p>
+                    <a href="#" class="slide-view-btn">View Code</a>
+                </div>
+            </div>
+
+            <button class="slider-arrow slider-next" aria-label="Next">❯</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-brand">JOHN JOSHUA <span>RAÑESES</span></div>
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom">
+            <span>© 2026 John Joshua Rañeses. All rights reserved.</span>
+            <span>Last Updated: September 2026</span>
+            <a href="#home" class="back-to-top">↑ Back to top</a>
+        </div>
+    </footer>
 
     <script>
         // Navbar Scroll Effect
@@ -911,6 +1171,55 @@
         }
 
         typingEffect();
+
+        // Infinite Carousel Slider Logic
+        const slides = document.querySelectorAll('.slide-item');
+        const btnPrev = document.querySelector('.slider-prev');
+        const btnNext = document.querySelector('.slider-next');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                // Remove all state classes
+                slide.classList.remove('active', 'prev', 'next');
+                
+                // Calculate positions considering array wrap-around
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+                    slide.classList.add('prev');
+                } else if (index === (currentSlide + 1) % totalSlides) {
+                    slide.classList.add('next');
+                }
+            });
+        }
+
+        btnNext.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        btnPrev.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        // Allow clicking the side items to bring them to center
+        slides.forEach((slide) => {
+            slide.addEventListener('click', (e) => {
+                if (slide.classList.contains('prev')) {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                } else if (slide.classList.contains('next')) {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateCarousel();
+                }
+            });
+        });
+
+        // Initialize carousel on load
+        updateCarousel();
     </script>
 
 </body>
