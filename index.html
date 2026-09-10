@@ -24,16 +24,6 @@
             line-height: 1.5;
         }
         
-        /* GENERAL SECTION TITLES */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #ffffff;
-            margin: 0 0 25px 0; 
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
         /* 2. NAVBAR */
         .navbar {
             position: sticky;
@@ -125,7 +115,7 @@
         /* 3. HOME SECTION */
         .section-home {
             background-color: transparent; 
-            padding: 120px 40px;
+            padding: 60px 40px 80px 40px; /* Reduced top padding to move it up */
             display: flex;
             justify-content: center;
         }
@@ -169,20 +159,20 @@
 
         /* Right Column: Floating Photo & Backdrop Circle */
         .home-image-column {
-            flex: 0 0 380px; /* Slightly wider to accommodate the circle */
+            flex: 0 0 380px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Aligns contents to the base */
         }
 
         /* The container holding both the circle and the image */
         .image-wrapper {
             position: relative;
             width: 100%;
-            height: 380px; /* Fixed height to anchor the circle */
+            height: 380px; 
             display: flex;
             justify-content: center;
-            align-items: center; 
+            align-items: flex-end; /* Anchors the photo to the bottom */
         }
 
         /* The static background circle */
@@ -190,25 +180,29 @@
             position: absolute;
             width: 320px;
             height: 320px;
-            background-color: #2f405d; /* Lighter navy */
+            background-color: #2f405d; 
             border-radius: 50%;
             z-index: 0;
-            box-shadow: 0 0 40px rgba(47, 64, 93, 0.4); /* Subtle glow */
+            box-shadow: 0 0 40px rgba(47, 64, 93, 0.4); 
+            bottom: 0; /* Pins the circle to the base */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* The floating photo */
         .profile-photo {
             position: relative;
-            z-index: 1; /* Puts the image in front of the circle */
+            z-index: 1;
             width: 100%;
             max-width: 320px;
             height: auto;
             animation: floatPhoto 4s ease-in-out infinite;
+            transform-origin: bottom; /* Ensures the bobbing effect feels natural from the base */
         }
 
         @keyframes floatPhoto {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); } /* Slightly higher float for better depth effect */
+            50% { transform: translateY(-15px); } 
             100% { transform: translateY(0); }
         }
 
@@ -274,7 +268,8 @@
         </div> 
     </nav>
 
-    <section id="home" class="section-home" style="min-height: 100vh;">
+    <!-- Removed min-height to pull the content up -->
+    <section id="home" class="section-home">
         <div class="home-content">
             <!-- Left Side -->
             <div class="home-text-column">
