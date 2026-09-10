@@ -115,7 +115,7 @@
         /* 3. HOME SECTION */
         .section-home {
             background-color: transparent; 
-            padding: 60px 40px 80px 40px; /* Reduced top padding to move it up */
+            padding: 90px 40px 80px 40px; /* Perfect middle-ground padding */
             display: flex;
             justify-content: center;
         }
@@ -162,7 +162,7 @@
             flex: 0 0 380px;
             display: flex;
             justify-content: center;
-            align-items: flex-end; /* Aligns contents to the base */
+            align-items: flex-end; 
         }
 
         /* The container holding both the circle and the image */
@@ -172,7 +172,7 @@
             height: 380px; 
             display: flex;
             justify-content: center;
-            align-items: flex-end; /* Anchors the photo to the bottom */
+            align-items: flex-end; 
         }
 
         /* The static background circle */
@@ -184,7 +184,7 @@
             border-radius: 50%;
             z-index: 0;
             box-shadow: 0 0 40px rgba(47, 64, 93, 0.4); 
-            bottom: 0; /* Pins the circle to the base */
+            bottom: 0; 
             left: 50%;
             transform: translateX(-50%);
         }
@@ -197,7 +197,7 @@
             max-width: 320px;
             height: auto;
             animation: floatPhoto 4s ease-in-out infinite;
-            transform-origin: bottom; /* Ensures the bobbing effect feels natural from the base */
+            transform-origin: bottom; 
         }
 
         @keyframes floatPhoto {
@@ -268,7 +268,6 @@
         </div> 
     </nav>
 
-    <!-- Removed min-height to pull the content up -->
     <section id="home" class="section-home">
         <div class="home-content">
             <!-- Left Side -->
