@@ -623,32 +623,36 @@
         }
 
         .cert-marquee-wrapper {
-            display: flex;
             width: 100%;
             max-width: 1200px;
             overflow: hidden;
+            margin: 0 auto;
             -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
             mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
         }
-        .cert-marquee-wrapper:hover .cert-marquee-content {
-            animation-play-state: paused;
-        }
-        .cert-marquee-content {
+
+        .cert-marquee-track {
             display: flex;
             gap: 30px;
-            padding-right: 30px;
-            animation: scroll-certs 35s linear infinite;
-            
-            /* ADD THESE TWO LINES TO FIX THE OVERLAPPING */
-            flex-shrink: 0; 
             width: max-content;
+            animation: scroll-certs 35s linear infinite;
         }
+
+        .cert-marquee-track:hover {
+            animation-play-state: paused;
+        }
+
         @keyframes scroll-certs {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            100% { transform: translateX(-50%); }
         }
+
         .cert-card {
-            flex: 0 0 320px; 
+            width: 320px;
+            min-width: 320px; 
+            max-width: 320px; 
+            flex: 0 0 320px;
+            box-sizing: border-box; 
             background-color: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
@@ -1154,7 +1158,7 @@
                     <div class="badge-wrapper">
                         <div class="location-badge">
                             <div class="loc-text-group">
-                                <div class="loc-title">Audit Intern</div>
+                                <div class="loc-title">Audit Intern @ Bizedge</div>
                                 <div class="loc-sub">living in Dubai, UAE</div>
                             </div>
                             <div class="badge-actions">
@@ -1281,7 +1285,8 @@
     <section id="certifications" class="section-certs">
         <h2 class="section-title">Certifications</h2>
         <div class="cert-marquee-wrapper">
-            <div class="cert-marquee-content">
+            <div class="cert-marquee-track">
+                <!-- Original Set of Cards -->
                 <div class="cert-card">
                     <img src="Assets/Cert_QBO.png" alt="QuickBooks Certification" class="cert-thumbnail">
                     <h4 class="cert-title">QuickBooks Online Certification</h4>
@@ -1307,8 +1312,8 @@
                     <a href="Assets/John Joshua Rañeses - ALTERYXAI" target="_blank" class="cert-btn">View Certification</a>
                 </div>
             </div>
-
-            <div class="cert-marquee-content" aria-hidden="true">
+            
+                <!-- Exact Duplicate Set for Seamless Loop -->
                 <div class="cert-card">
                     <img src="Assets/Cert_QBO.png" alt="QuickBooks Certification" class="cert-thumbnail">
                     <h4 class="cert-title">QuickBooks Online Certification</h4>
