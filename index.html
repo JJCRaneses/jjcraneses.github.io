@@ -432,7 +432,7 @@
 
         /* 4. EDUCATION SECTION */
         #experience {
-            padding-top: 100px;
+            padding-top: 40px;
             padding-bottom: 40px;
         }
 
@@ -632,11 +632,13 @@
         }
 
         .cert-marquee-track {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            width: max-content !important;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: max-content;
+            flex-shrink: 0; /* This prevents the browser from squishing the track */
             gap: 30px;
+            padding-right: 30px; /* Ensures perfect math for the 50% loop reset */
             animation: scroll-certs 35s linear infinite;
         }
 
