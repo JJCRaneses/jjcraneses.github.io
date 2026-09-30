@@ -633,6 +633,7 @@
 
         .cert-marquee-track {
             display: flex;
+            flex-wrap: nowrap; /* This explicitly stops them from dropping vertically */
             gap: 30px;
             width: max-content;
             animation: scroll-certs 35s linear infinite;
